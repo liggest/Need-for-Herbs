@@ -1,0 +1,313 @@
+fileFormatVersion: 2
+guid: 5d6b516aaf57b774ea344a869914287c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5681613791555460825
+    second: plane_light2
+  - first:
+      213: -4971496277874117778
+    second: plane_light1
+  - first:
+      213: 8578526434298423843
+    second: plane_2
+  - first:
+      213: -71850760583209166
+    second: plane_3
+  - first:
+      213: -3622154476317959229
+    second: plane_4
+  - first:
+      213: -8151916955095676026
+    second: plane_5
+  - first:
+      213: 3171434340885623197
+    second: plane_6
+  - first:
+      213: -6888196902747168180
+    second: plane_7
+  - first:
+      213: -4821824642412870113
+    second: plane_8
+  - first:
+      213: 7614615791889233116
+    second: plane_9
+  - first:
+      213: 3504580427446384727
+    second: plane_10
+  - first:
+      213: 35873539096220179
+    second: plane_11
+  - first:
+      213: -6247163885423734530
+    second: plane_12
+  - first:
+      213: -2674008886842048523
+    second: plane_13
+  - first:
+      213: 531613532882546078
+    second: plane_14
+  - first:
+      213: -6394998136100148433
+    second: plane_15
+  - first:
+      213: 7362975816535370801
+    second: plane_16
+  - first:
+      213: 6688602677382589880
+    second: plane_17
+  - first:
+      213: 4647778980995398357
+    second: plane_18
+  - first:
+      213: 5599600651569193936
+    second: plane_19
+  - first:
+      213: -6853098131195708688
+    second: plane_20
+  - first:
+      213: -3972378355520051925
+    second: plane_21
+  - first:
+      213: -2858381293471592970
+    second: plane_22
+  - first:
+      213: 7867304445144278641
+    second: plane_23
+  - first:
+      213: -232168343842789521
+    second: plane_24
+  - first:
+      213: -3181957212832467053
+    second: plane_25
+  - first:
+      213: 1182803814902106566
+    second: plane_26
+  - first:
+      213: -905066122333092720
+    second: plane_27
+  - first:
+      213: -8814243215018519900
+    second: plane_28
+  - first:
+      213: 8373323784069610009
+    second: plane_29
+  - first:
+      213: -7510214076880809701
+    second: plane_30
+  - first:
+      213: 7255889251931816188
+    second: plane_31
+  - first:
+      213: 5818654718992576441
+    second: plane_32
+  - first:
+      213: -6164405391903871185
+    second: plane_33
+  - first:
+      213: 84494848508770602
+    second: plane_34
+  - first:
+      213: 8519141992548566508
+    second: plane_35
+  - first:
+      213: -464304271993725269
+    second: plane_0
+  - first:
+      213: 6886057394091986024
+    second: plane_1
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 2
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: plane_light2
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 155
+        width: 398
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 721606beb5ad621b0800000000000000
+      internalID: -5681613791555460825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plane_light1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 332
+        width: 379
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e63f223b972b10bb0800000000000000
+      internalID: -4971496277874117778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plane_0
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 386
+        width: 392
+        height: 82
+      alignment: 9
+      pivot: {x: 0.4999999, y: 0.4291562}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bae1e1089b57e89f0800000000000000
+      internalID: -464304271993725269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plane_1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 229
+        width: 398
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 2, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86c0ecd47b0309f50800000000000000
+      internalID: 6886057394091986024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
