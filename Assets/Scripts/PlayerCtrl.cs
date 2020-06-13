@@ -44,6 +44,8 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField] bool isJumping;
     [SerializeField] bool GravitySwitch = true;
 
+    [SerializeField] bool isAbleToCtrl = true;
+    [SerializeField] bool isDead = false;
 
     void Awake()
     {
@@ -54,94 +56,98 @@ public class PlayerCtrl : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        isOnGround = OnGround();
-
-        #region 移动
-        if (CanMove)
+        if (isAbleToCtrl)
         {
-            if (Input.GetAxisRaw("Horizontal") > InputOffset.x)
-            {
-                if (Rig.velocity.x< WalkSpeed * Time.fixedDeltaTime * 60)
-                    Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, WalkSpeed * Time.fixedDeltaTime * 60, ref velocityX, AccelerateTime), Rig.velocity.y);
 
-                transform.eulerAngles = new Vector3(0, 0, 0);
-                Anim.SetBool("isrunning", true);
+            isOnGround = OnGround();
+
+            #region 移动
+            if (CanMove)
+            {
+                if (Input.GetAxisRaw("Horizontal") > InputOffset.x)
+                {
+                    if (Rig.velocity.x < WalkSpeed * Time.fixedDeltaTime * 60)
+                        Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, WalkSpeed * Time.fixedDeltaTime * 60, ref velocityX, AccelerateTime), Rig.velocity.y);
+
+                    transform.eulerAngles = new Vector3(0, 0, 0);
+                    Anim.SetBool("isrunning", true);
+                }
+
+                else if (Input.GetAxisRaw("Horizontal") < InputOffset.x * -1)
+                {
+                    if (Rig.velocity.x > WalkSpeed * Time.fixedDeltaTime * 60 * -1)
+                        Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, WalkSpeed * Time.fixedDeltaTime * 60 * -1, ref velocityX, AccelerateTime), Rig.velocity.y);
+                    transform.eulerAngles = new Vector3(0, 180, 0);
+                    Anim.SetBool("isrunning", true);
+                }
+
+                else
+                {
+                    Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, 0, ref velocityX, DecelerateTime), Rig.velocity.y);
+                    Anim.SetBool("isrunning", false);
+                }
+            }
+            #endregion
+
+            #region 跳跃
+            if (CanJump)
+            {
+                if (Input.GetAxisRaw("Jump") == 1 && !isJumping)
+                {
+                    Rig.velocity = new Vector2(Rig.velocity.x, JumpingSpeed);
+                    isJumping = true;
+                    Anim.SetTrigger("takeof");
+                }
+
+                if (isOnGround && Input.GetAxisRaw("Jump") == 0)
+                {
+                    isJumping = false;
+
+                }
+                if (isOnGround)
+                {
+                    Anim.SetBool("isjump", false);
+                }
+                else
+                {
+                    Anim.SetBool("isjump", true);
+                }
+            }
+            #endregion
+
+            #region 重力控制器
+            if (GravityModifier)
+            {
+                if (Rig.velocity.y < 0)//玩家下坠
+                {
+                    Rig.velocity += Vector2.up * Physics2D.gravity.y * (FallMultiplier - 1) * Time.fixedDeltaTime;//加速下坠
+                }
+                else if (Rig.velocity.y > 0 && Input.GetAxis("Jump") != 1)//玩家上升，并且没有按下跳跃键
+                {
+                    Rig.velocity += Vector2.up * Physics2D.gravity.y * (LowJumpMultiplier - 1) * Time.fixedDeltaTime;//减缓上升
+                }
+            }
+            #endregion
+
+            #region 冲刺
+            if (Input.GetAxisRaw("Dash") == 1 && !WasDashed)
+            {
+                WasDashed = true;
+                dir = GetDir();
+                StartCoroutine(Dash());//使用
+                                       //将玩家当前所有动量清零
+                Rig.velocity = Vector2.zero;
+                //施加一个力，让玩家飞出去
+                Rig.velocity += dir.normalized * DragForce;
+
             }
 
-            else if (Input.GetAxisRaw("Horizontal") < InputOffset.x * -1)
+            if (isOnGround && Input.GetAxisRaw("Dash") == 0)
             {
-                if (Rig.velocity.x > WalkSpeed * Time.fixedDeltaTime * 60*-1)
-                    Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, WalkSpeed * Time.fixedDeltaTime * 60 * -1, ref velocityX, AccelerateTime), Rig.velocity.y);
-                transform.eulerAngles = new Vector3(0, 180, 0);
-                Anim.SetBool("isrunning", true);
+                WasDashed = false;
             }
-
-            else
-            {
-                Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, 0, ref velocityX, DecelerateTime), Rig.velocity.y);
-                Anim.SetBool("isrunning", false);
-            }
+            #endregion
         }
-        #endregion
-
-        #region 跳跃
-        if (CanJump)
-        {
-            if (Input.GetAxisRaw("Jump") == 1 && !isJumping)
-            {
-                Rig.velocity = new Vector2(Rig.velocity.x, JumpingSpeed);
-                isJumping = true;
-                Anim.SetTrigger("takeof");
-            }
-
-            if (isOnGround && Input.GetAxisRaw("Jump") == 0)
-            {
-                isJumping = false;
-                
-            }
-            if (isOnGround)
-            {
-                Anim.SetBool("isjump", false);
-            }
-            else
-            {
-                Anim.SetBool("isjump", true);
-            }
-        }
-        #endregion
-
-        #region 重力控制器
-        if (GravityModifier)
-        {
-            if (Rig.velocity.y < 0)//玩家下坠
-            {
-                Rig.velocity += Vector2.up * Physics2D.gravity.y * (FallMultiplier - 1) * Time.fixedDeltaTime;//加速下坠
-            }
-            else if (Rig.velocity.y > 0 && Input.GetAxis("Jump") != 1)//玩家上升，并且没有按下跳跃键
-            {
-                Rig.velocity += Vector2.up * Physics2D.gravity.y * (LowJumpMultiplier - 1) * Time.fixedDeltaTime;//减缓上升
-            }
-        }     
-        #endregion
-
-        #region 冲刺
-        if (Input.GetAxisRaw("Dash") == 1 && !WasDashed)
-        {
-            WasDashed = true;
-            dir = GetDir();
-            StartCoroutine(Dash());//使用
-            //将玩家当前所有动量清零
-            Rig.velocity = Vector2.zero;
-            //施加一个力，让玩家飞出去
-            Rig.velocity += dir.normalized * DragForce;
-            
-        }
-
-        if (isOnGround && Input.GetAxisRaw("Dash") == 0)
-        {
-            WasDashed = false;
-        }
-        #endregion
     }
 
     IEnumerator Dash()
@@ -198,6 +204,8 @@ public class PlayerCtrl : MonoBehaviour
         if (collision.gameObject.tag == "Dangerous")
         {
             Debug.Log("死了");
+            isAbleToCtrl = false;
+            isDead = true;
         }
     }
 }
