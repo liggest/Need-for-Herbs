@@ -41,4 +41,9 @@ public class InteractWithKey : MonoBehaviour
             }
         }
     }
+
+    public void TestFunc()
+    {
+        Debug.Log("按键了" + key.ToString());
+    }
 }

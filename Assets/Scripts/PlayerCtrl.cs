@@ -192,4 +192,12 @@ public class PlayerCtrl : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube((Vector2)transform.position + PointOffset, Size);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Dangerous")
+        {
+            Debug.Log("死了");
+        }
+    }
 }
