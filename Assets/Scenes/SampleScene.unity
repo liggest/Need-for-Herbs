@@ -1469,10 +1469,11 @@ MonoBehaviour:
   smoothTime: 0.4
   outRadius: 4.5
   inRaduis: 0.03
+  deltaRaduis: 0.01
   sceneRect:
     serializedVersion: 2
     x: -20
-    y: 10
+    y: -10
     width: 40
     height: 20
 --- !u!1 &530307726
