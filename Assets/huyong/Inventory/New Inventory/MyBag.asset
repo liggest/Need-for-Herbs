@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 781f9df6dea697f45a65494e17bc8927, type: 3}
+  m_Name: MyBag
+  m_EditorClassIdentifier: 
+  itemList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: f5a5477ae093d8c49ad9ea2c38836add, type: 2}
+  - {fileID: 11400000, guid: f5a5477ae093d8c49ad9ea2c38836add, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: aee5915690136c64da542fc00d0aa17a, type: 2}
+  - {fileID: 11400000, guid: f5a5477ae093d8c49ad9ea2c38836add, type: 2}
+  - {fileID: 11400000, guid: f5a5477ae093d8c49ad9ea2c38836add, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: f5a5477ae093d8c49ad9ea2c38836add, type: 2}
+  - {fileID: 11400000, guid: 1b882cf1c25fc044d815e6af44dcdfbe, type: 2}
+  - {fileID: 11400000, guid: f5a5477ae093d8c49ad9ea2c38836add, type: 2}
+  - {fileID: 0}
+  itemList2: []
+  itemList3: []
