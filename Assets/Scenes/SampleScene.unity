@@ -3972,7 +3972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d673c120ccfcd864e817af557ea493f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelTime: 10
+  levelTime: 120
   timeText: {fileID: 239066219}
 --- !u!4 &1524252808
 Transform:
