@@ -87,7 +87,27 @@ public class CraftPath
         LinkedList<string> ms = new LinkedList<string>(materials);
         for(int i = 0; i < current.Length; i++)
         {
-            if( ms.Remove(current[i]))
+            if( !ms.Remove(current[i]))
+            {
+                return false;
+            }
+        }
+        if (ms.Count == 0)
+        {
+            return true;
+        }
+        return false;
+    }
+    public bool isCraftable(string[] current,bool fullmatch)
+    {
+        if (fullmatch)
+        {
+            return isCraftable(current);
+        }
+        LinkedList<string> ms = new LinkedList<string>(materials);
+        for (int i = 0; i < current.Length; i++)
+        {
+            if (ms.Remove(current[i]))
             {
                 if (ms.Count == 0)
                 {
@@ -96,6 +116,7 @@ public class CraftPath
             }
         }
         return false;
+
     }
 
     public GameObject getPrefab()
