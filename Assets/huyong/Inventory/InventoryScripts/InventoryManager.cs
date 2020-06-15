@@ -319,6 +319,13 @@ public class InventoryManager : MonoBehaviour
     }
 
 
+    public void AllPanelClear()
+    {
+        instance.panel1.SetActive(false);
+        instance.panel2.SetActive(false);
+        instance.panel3.SetActive(false);
+    }
+
     public bool CheckMaterial()
     {
         Item material1 = currentItem.material1;
@@ -410,25 +417,4 @@ public class InventoryManager : MonoBehaviour
             instance.slots3[i].GetComponent<Slot3>().SetupSlot(instance.myBag.itemList3[i]);
         }
     }
-    //public static void RefreshItem3()
-    //{
-    //    for (int i = 0; i < instance.slotGrid3.transform.childCount; i++)
-    //    {
-    //        if (instance.slotGrid3.transform.childCount == 0)
-    //        {
-    //            break;
-    //        }
-    //        Destroy(instance.slotGrid3.transform.GetChild(i).gameObject);
-    //        instance.slots3.Clear();
-    //    }
-
-    //    for (int i = 0; i < instance.myBag3.itemList3.Count; i++)
-    //    {
-    //        // CreateNewItem(instance.myBag.itemList[i]); 
-    //        instance.slots3.Add(Instantiate(instance.emptySlot3));
-    //        instance.slots3[i].transform.SetParent(instance.slotGrid3.transform);
-    //        instance.slots3[i].GetComponent<Slot3>().slotID = i;
-    //        instance.slots3[i].GetComponent<Slot3>().SetupSlot(instance.myBag3.itemList3[i]);
-    //    }
-    //}
 }
