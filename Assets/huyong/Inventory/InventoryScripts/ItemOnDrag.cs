@@ -17,6 +17,7 @@ public class ItemOnDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragH
         transform.SetParent(transform.parent.parent);
         transform.position = eventData.position;
         GetComponent<CanvasGroup>().blocksRaycasts = false;
+        InventoryManager.PanelClear();
     }
 
     public void OnDrag(PointerEventData eventData)
