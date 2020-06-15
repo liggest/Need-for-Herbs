@@ -38,6 +38,7 @@ public class PlayerCtrl : MonoBehaviour
 
     Rigidbody2D Rig;
     Animator Anim;
+    public GameObject Bag;
 
     [SerializeField] bool isOnGround;
     [SerializeField] float velocityX;
@@ -53,6 +54,10 @@ public class PlayerCtrl : MonoBehaviour
         Anim = GetComponent<Animator>();
     }
 
+    private void Update()
+    {
+        OpenMyBag();
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -206,6 +211,22 @@ public class PlayerCtrl : MonoBehaviour
             Debug.Log("死了");
             isAbleToCtrl = false;
             isDead = true;
+        }
+    }
+
+    void OpenMyBag()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            print("sdd");
+            if (Bag.activeSelf == false)
+            {
+                Bag.SetActive(true);
+            }
+            else
+            {
+                Bag.SetActive(false);
+            }
         }
     }
 }

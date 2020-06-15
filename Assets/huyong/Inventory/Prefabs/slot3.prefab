@@ -88,10 +88,9 @@ GameObject:
   - component: {fileID: 4606690725863534972}
   - component: {fileID: 3269367331281604704}
   - component: {fileID: 6371267700016719127}
-  - component: {fileID: 1175538760065721683}
   m_Layer: 5
   m_Name: slot3
-  m_TagString: use
+  m_TagString: prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,23 +151,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1175538760065721683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3961301370552521859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c8b4a52e92a8004882f796062ef25f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slotID: 0
-  slotItem: {fileID: 0}
-  slotImage: {fileID: 5949962576139554496}
-  slotNum: {fileID: 8710894367454891511}
-  itemInSlot: {fileID: 4849823878935430448}
 --- !u!1 &4849823878935430448
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,7 +243,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1175538760065721683}
+      - m_Target: {fileID: 0}
         m_MethodName: ItemOnClicked
         m_Mode: 1
         m_Arguments:

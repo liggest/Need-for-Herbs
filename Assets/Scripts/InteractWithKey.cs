@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class InteractWithKey : MonoBehaviour
 {
+    [Tooltip("交互的提示文本"),TextArea]
+    public string hintInfo;
     [Tooltip("这个可交互物体的按键")]
     public KeyCode key;
     [Tooltip("按下按键时触发的函数")]
@@ -27,7 +29,7 @@ public class InteractWithKey : MonoBehaviour
     {
         if (collision.gameObject.layer == 8) // 是player
         {
-            kp.Show(transform, key, onKeyDown);
+            kp.Show(transform, hintInfo, key, onKeyDown);
         }
     }
 

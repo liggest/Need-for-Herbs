@@ -8,18 +8,24 @@ public class KeyPresent : MonoBehaviour
 {
     [Tooltip("按键框在物体上方，这是它和物体的距离")]
     public float topDistance = 2;
-    [Tooltip("这是按键框里的字")]
-    public Text keyText;
+    //[Tooltip("这是按键框里的字")]
+    Text keyText;
+    RectTransform bgRect;
     Transform target;
     UnityEvent keyDown = null;
     KeyCode keycode;
     bool isShow = false;
+    int bgFit = -1;
     Animator ani;
     // Start is called before the first frame update
     void Start()
     {
         ani = GetComponent<Animator>();
+        Transform bg = transform.GetChild(0);
+        bgRect = bg.GetComponent<RectTransform>();
+        keyText = bg.GetComponentInChildren<Text>();
         gameObject.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -27,6 +33,15 @@ public class KeyPresent : MonoBehaviour
     {
         if (isShow)
         {
+            if (bgFit >= 0)
+            {
+                bgRect.sizeDelta = keyText.rectTransform.sizeDelta + new Vector2(6, 2);
+                bgFit += 1;
+                if (bgFit > 1)
+                {
+                    bgFit = -1;
+                }
+            }
             SetPos();
             if (Input.GetKeyDown(keycode))
             {
@@ -39,7 +54,7 @@ public class KeyPresent : MonoBehaviour
         
     }
 
-    public void Show(Transform t, KeyCode key, UnityEvent keydown)
+    public void Show(Transform t,string info, KeyCode key, UnityEvent keydown)
     {
         if (gameObject.activeInHierarchy)
         {
@@ -49,17 +64,21 @@ public class KeyPresent : MonoBehaviour
         if (target == null) { return; }
         keyDown = keydown;
         keycode = key;
+        /*
         string keystr = keycode.ToString();
         if (keystr.StartsWith("Alpha"))
         {
             keystr = keystr.Substring(5);
         }
-        keyText.text = keystr;
+        keyText.text = keystr;*/
+        keyText.text = info;
+        bgFit = 0;
         isShow = true;
         SetPos();
         gameObject.SetActive(true);
         ani.Play("keyPresenterPop");
     }
+
     void SetPos()
     {
         //Vector3 screenp = Camera.main.WorldToScreenPoint(target.position);

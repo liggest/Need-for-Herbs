@@ -11,9 +11,9 @@ public class CameraFollowing : MonoBehaviour
     [Tooltip("对象离开画面中心多远，相机开始追踪")]
     public float outRadius = 4.5f;
     [Tooltip("对象距离画面中心多近，相机完全停止追踪")]
-    public float inRaduis = 0.03f;
+    public float inRadius = 0.03f;
     [Tooltip("相机单次移动距离多近，相机完全停止追踪")]
-    public float deltaRaduis = 0.01f;
+    public float deltaRadius = 0.01f;
     [Tooltip("场景边框，X、Y对应左下角位置，W、H对应场景大小")]
     public Rect sceneRect;
     bool isMove = false;
@@ -26,6 +26,34 @@ public class CameraFollowing : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        /*
+        Vector2 center = Camera.main.transform.position;
+        Vector2 tar = target.position;
+        float distance = Vector2.Distance(center, tar);
+        if (distance > outRadius)
+        {
+            isMove = true;
+        }
+        if (isMove)
+        {
+            Vector2 delta = Vector2.SmoothDamp(center, tar, ref cv, smoothTime);
+            float cameraZ = Camera.main.transform.position.z;
+            Camera.main.transform.position = new Vector3(delta.x, delta.y, cameraZ);
+            RestrictCameraPos();
+            float deltaDistance = Vector2.Distance(Camera.main.transform.position, center);
+            //Debug.Log(deltaDistance);
+            if (distance < inRadius || deltaDistance < deltaRadius)
+            {
+                //Debug.Log("停了");
+                isMove = false;
+            }
+            
+        }
+        */
+    }
+
+    private void FixedUpdate()
     {
         Vector2 center = Camera.main.transform.position;
         Vector2 tar = target.position;
@@ -42,12 +70,12 @@ public class CameraFollowing : MonoBehaviour
             RestrictCameraPos();
             float deltaDistance = Vector2.Distance(Camera.main.transform.position, center);
             //Debug.Log(deltaDistance);
-            if (distance < inRaduis || deltaDistance < deltaRaduis)
+            if (distance < inRadius || deltaDistance < deltaRadius)
             {
                 //Debug.Log("停了");
                 isMove = false;
             }
-            
+
         }
     }
 
