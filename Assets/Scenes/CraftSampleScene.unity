@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -572,8 +572,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 405}
-  m_SizeDelta: {x: 239.2, y: 86.9}
+  m_AnchoredPosition: {x: 0, y: 165}
+  m_SizeDelta: {x: 153.8, y: 55.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &114394522
 MonoBehaviour:
@@ -646,7 +646,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 368, y: 69}
+  m_SizeDelta: {x: 281.11, y: 52.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &160193254
 MonoBehaviour:
@@ -668,7 +668,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: dab90a45cedf47b4291bd9816c597551, type: 3}
-    m_FontSize: 50
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -2138,7 +2138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &538074232
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2755,7 +2755,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &653094765
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4221,7 +4221,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1032631870
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4500,7 +4500,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1082500971
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4868,8 +4868,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1400, y: 960}
+  m_AnchoredPosition: {x: 35, y: -19}
+  m_SizeDelta: {x: 640, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1178593014
 MonoBehaviour:
@@ -4923,6 +4923,7 @@ MonoBehaviour:
   myBag2: {fileID: 0}
   slotGrid1: {fileID: 2100265171}
   slotGrid2: {fileID: 1561471709}
+  slotGrid3: {fileID: 0}
   itemInformation: {fileID: 1898245479}
   material1img: {fileID: 1346046565}
   material2img: {fileID: 600339797}
@@ -4934,14 +4935,20 @@ MonoBehaviour:
     type: 3}
   emptySlot2: {fileID: 3961301370552521859, guid: 6d33302f0ec9c9e4ebdef11ce583c6ee,
     type: 3}
+  emptySlot3: {fileID: 0}
   slots: []
   slots2: []
+  slots3: []
   PropItemList:
   - {fileID: 11400000, guid: 0b328e08d7a61634f8b4b69d67776895, type: 2}
   - {fileID: 11400000, guid: d14ba4d595f6baa45be0e253fb8762c8, type: 2}
+  EquipItemList: []
   currentItem: {fileID: 0}
   TipsPanel: {fileID: 1371989355}
   Tips: {fileID: 1438556916}
+  panel1: {fileID: 0}
+  panel2: {fileID: 0}
+  panel3: {fileID: 0}
 --- !u!114 &1178593017
 MonoBehaviour:
   m_ObjectHideFlags: 0
