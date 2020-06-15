@@ -17,4 +17,4 @@ MonoBehaviour:
   itemHeld: 10
   Itemid: 0
   itemInfo: flower1
-  equip: 0
+  equip: 1

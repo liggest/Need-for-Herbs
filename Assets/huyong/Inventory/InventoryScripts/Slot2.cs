@@ -17,7 +17,7 @@ public class Slot2 : MonoBehaviour
 
     public void ItemOnClicked()
     {
-        InventoryManager.PanelClear();
+
         InventoryManager.UpdatePropItem(slotItem,slotItem.material1.itemImage,slotItem.material2.itemImage, slotItem.material1num, slotItem.material2num,
             slotItem.itemInfo);
     }
