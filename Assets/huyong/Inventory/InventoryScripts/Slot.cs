@@ -15,14 +15,20 @@ public class Slot : MonoBehaviour
     public void ItemOnClicked()
     {
         InventoryManager.UpdateItemInfo(slotItem.itemInfo);
+        InventoryManager.PanelClear();
         //lastItem = slotItem;
         slotID = itemInSlot.GetComponentInParent<Slot>().slotID;
         //InventoryManager.getID(slotID,true);
         Debug.Log(slotID);
     }
 
-   
-    
+
+    public void OnRightClicked()
+    {
+        InventoryManager.MouseRightClick1(slotItem);
+    }
+
+
 
     public void SetupSlot(Item item) 
     {

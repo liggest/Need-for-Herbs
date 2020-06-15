@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 286eaad23bc301c45a94c3b2059f3055, type: 3}
-  m_Name: flower1
+  m_Script: {fileID: 11500000, guid: f62f6601e59a2754dab19b4ec1989e53, type: 3}
+  m_Name: equip2
   m_EditorClassIdentifier: 
-  itemName: flower1
-  itemImage: {fileID: 21300000, guid: 12b3574ec364a80488a80226056027ab, type: 3}
-  itemHeld: 10
-  Itemid: 0
-  itemInfo: flower1
-  equip: 0
+  itemName: "\u8611\u83C7"
+  itemImage: {fileID: 21300000, guid: 980c4d37b9ca6da439122b8f99dbceca, type: 3}
+  Itemid: 1
+  itemInfo: "\u8611\u83C7"
+  equip: 1
