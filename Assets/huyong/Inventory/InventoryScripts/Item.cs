@@ -8,18 +8,7 @@ public class Item : ScriptableObject {
     public Sprite itemImage;
     public int itemHeld;
 
-    public int Value;
-
-    public float attackValue;
-    public float spellPower;
-    public float Armor;
-    public float spellResistance;
-    public float criticalChance;
-    public float criticalDamage;
-    public float Speed;
-    public float healthValue;
-    public float healthSteal;
-    public int effect;
+    public int Itemid;
 
 
     [TextArea]

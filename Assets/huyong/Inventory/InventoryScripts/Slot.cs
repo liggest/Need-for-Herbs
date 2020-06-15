@@ -9,18 +9,15 @@ public class Slot : MonoBehaviour
     public Item slotItem;
     public Image slotImage;
     public Text slotNum;
-    public Item3 thisItem;
-    public Item lastItem;
 
     public GameObject itemInSlot;
 
     public void ItemOnClicked()
     {
-        InventoryManager.UpdateItemInfo1(slotItem.itemName,slotItem.Value,slotItem.itemInfo,slotItem.attackValue,slotItem.spellPower,slotItem.Armor,
-            slotItem.spellResistance,slotItem.criticalChance,slotItem.criticalDamage,slotItem.Speed,slotItem.healthValue,slotItem.healthSteal,slotItem.effect,slotItem.itemImage);
-        lastItem = slotItem;
+        InventoryManager.UpdateItemInfo(slotItem.itemInfo);
+        //lastItem = slotItem;
         slotID = itemInSlot.GetComponentInParent<Slot>().slotID;
-        InventoryManager.getID(slotID,true);
+        //InventoryManager.getID(slotID,true);
         Debug.Log(slotID);
     }
 

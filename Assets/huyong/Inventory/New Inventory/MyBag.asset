@@ -13,20 +13,25 @@ MonoBehaviour:
   m_Name: MyBag
   m_EditorClassIdentifier: 
   itemList:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 11400000, guid: f5a5477ae093d8c49ad9ea2c38836add, type: 2}
-  - {fileID: 11400000, guid: f5a5477ae093d8c49ad9ea2c38836add, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 9d89183e4de187c4e8ddd0c3b49a8496, type: 2}
   - {fileID: 11400000, guid: aee5915690136c64da542fc00d0aa17a, type: 2}
-  - {fileID: 11400000, guid: f5a5477ae093d8c49ad9ea2c38836add, type: 2}
-  - {fileID: 11400000, guid: f5a5477ae093d8c49ad9ea2c38836add, type: 2}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 11400000, guid: f5a5477ae093d8c49ad9ea2c38836add, type: 2}
-  - {fileID: 11400000, guid: 1b882cf1c25fc044d815e6af44dcdfbe, type: 2}
-  - {fileID: 11400000, guid: f5a5477ae093d8c49ad9ea2c38836add, type: 2}
   - {fileID: 0}
-  itemList2: []
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  itemList2:
+  - {fileID: 11400000, guid: 52219f019c98dba4fbb21a5147e9d7ed, type: 2}
+  - {fileID: 11400000, guid: 3d6b106849ddcdc4d8cc94a78b867dbd, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   itemList3: []

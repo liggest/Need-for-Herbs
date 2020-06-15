@@ -6,7 +6,6 @@ using UnityEngine;
 public class Inventory : ScriptableObject
 {
     public List<Item> itemList = new List<Item>();
-    public List<Item2> itemList2 = new List<Item2>();
-    public List<Item> itemList3 = new List<Item>();
+    public List<PropItem> itemList2 = new List<PropItem>();
 }
  

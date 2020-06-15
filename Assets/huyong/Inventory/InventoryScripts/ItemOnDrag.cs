@@ -26,7 +26,7 @@ public class ItemOnDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragH
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (eventData.pointerCurrentRaycast.gameObject != null && !eventData.pointerCurrentRaycast.gameObject.CompareTag("use"))
+        if (eventData.pointerCurrentRaycast.gameObject != null && !eventData.pointerCurrentRaycast.gameObject.CompareTag("prop"))
         {
             if (eventData.pointerCurrentRaycast.gameObject.name == "Item Image")
             {

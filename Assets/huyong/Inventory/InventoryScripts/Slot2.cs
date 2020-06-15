@@ -5,29 +5,32 @@ using UnityEngine.UI;
 
 public class Slot2 : MonoBehaviour
 {
-    public int slotID;
-    public Item2 slotItem;
+    //public int slotID;
+    public PropItem slotItem;
     public Image slotImage;
-    public Text slotNum;
+    //public Image material1;
+    //public Image material2;
+    //public int material1num;
+    //public int material2num;
 
     public GameObject itemInSlot;
 
     public void ItemOnClicked()
     {
 
-        InventoryManager.UpdateItemInfo2(slotItem.itemName,slotItem.Value,slotItem.itemInfo,slotItem.effect,slotItem.itemImage);
+        InventoryManager.UpdatePropItem(slotItem,slotItem.material1.itemImage,slotItem.material2.itemImage, slotItem.material1num, slotItem.material2num,
+            slotItem.itemInfo);
     }
 
-    public void SetupSlot(Item2 item) 
+    public void SetupSlot(PropItem item)
     {
-        if (item == null) 
+        if (item == null)
         {
             itemInSlot.SetActive(false);
             return;
         }
 
         slotImage.sprite = item.itemImage;
-        slotNum.text = item.itemHeld.ToString();
         slotItem = item;
     }
 }

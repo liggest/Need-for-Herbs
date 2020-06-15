@@ -58,14 +58,21 @@ public class itemOnWorld : MonoBehaviour
 
     public void AddNewItem()
     {
-        //playerInventory.itemList.Add(thisItem);
-        for (int i = 0; i < playerInventory.itemList.Count; i++)
+        if (!playerInventory.itemList.Contains(thisItem))
         {
-            if (playerInventory.itemList[i]==null)
+            for (int i = 0; i < playerInventory.itemList.Count; i++)
             {
-                playerInventory.itemList[i] = thisItem;
-                break;
+                if (playerInventory.itemList[i] == null)
+                {
+                    playerInventory.itemList[i] = thisItem;
+                    thisItem.itemHeld = 1;
+                    break;
+                }
             }
+        }
+        else
+        {
+            thisItem.itemHeld += 1;
         }
         InventoryManager.RefreshItem1();
     }
