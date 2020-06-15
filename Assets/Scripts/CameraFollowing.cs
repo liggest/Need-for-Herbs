@@ -27,6 +27,7 @@ public class CameraFollowing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         Vector2 center = Camera.main.transform.position;
         Vector2 tar = target.position;
         float distance = Vector2.Distance(center, tar);
@@ -48,6 +49,33 @@ public class CameraFollowing : MonoBehaviour
                 isMove = false;
             }
             
+        }
+        */
+    }
+
+    private void FixedUpdate()
+    {
+        Vector2 center = Camera.main.transform.position;
+        Vector2 tar = target.position;
+        float distance = Vector2.Distance(center, tar);
+        if (distance > outRadius)
+        {
+            isMove = true;
+        }
+        if (isMove)
+        {
+            Vector2 delta = Vector2.SmoothDamp(center, tar, ref cv, smoothTime);
+            float cameraZ = Camera.main.transform.position.z;
+            Camera.main.transform.position = new Vector3(delta.x, delta.y, cameraZ);
+            RestrictCameraPos();
+            float deltaDistance = Vector2.Distance(Camera.main.transform.position, center);
+            //Debug.Log(deltaDistance);
+            if (distance < inRaduis || deltaDistance < deltaRaduis)
+            {
+                //Debug.Log("停了");
+                isMove = false;
+            }
+
         }
     }
 
