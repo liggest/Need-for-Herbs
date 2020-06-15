@@ -8,7 +8,12 @@ public class KeyPresent : MonoBehaviour
 {
     [Tooltip("按键框在物体上方，这是它和物体的距离")]
     public float topDistance = 2;
+    [Tooltip("提示开启时提示音的序号")]
+    public int openSound = -1;
+    [Tooltip("提示关闭时提示音的序号")]
+    public int closeSound = -1;
     //[Tooltip("这是按键框里的字")]
+    float topdistance = 2;
     Text keyText;
     RectTransform bgRect;
     Transform target;
@@ -20,6 +25,7 @@ public class KeyPresent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        topdistance = topDistance;
         ani = GetComponent<Animator>();
         Transform bg = transform.GetChild(0);
         bgRect = bg.GetComponent<RectTransform>();
@@ -54,6 +60,11 @@ public class KeyPresent : MonoBehaviour
         
     }
 
+    public void SetTopdistance(float value)
+    {
+        topdistance = value;
+    }
+
     public void Show(Transform t,string info, KeyCode key, UnityEvent keydown)
     {
         if (gameObject.activeInHierarchy)
@@ -76,6 +87,10 @@ public class KeyPresent : MonoBehaviour
         isShow = true;
         SetPos();
         gameObject.SetActive(true);
+        if(openSound>=0 && AudioManager.AM)
+        {
+            AudioManager.AM.PlaySound(openSound);
+        }
         ani.Play("keyPresenterPop");
     }
 
@@ -88,6 +103,10 @@ public class KeyPresent : MonoBehaviour
 
     public void UnShow()
     {
+        if (closeSound>=0 && AudioManager.AM)
+        {
+            AudioManager.AM.PlaySound(closeSound);
+        }
         ani.Play("keyPresenterPopOut");
     }
     public Transform GetTraget()
@@ -96,6 +115,7 @@ public class KeyPresent : MonoBehaviour
     }
     void DisActive()
     {
+        topdistance = topDistance;
         keyDown = null;
         isShow = false;
         gameObject.SetActive(false);

@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager AM;
     public AudioSource musicAS;
     public AudioSource soundAS;
+    public string BGMname = "";
     public AudioClip[] sounds;
     public ResourceRequest rr;
     // Start is called before the first frame update
@@ -21,6 +22,17 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
+        if (BGMname != "")
+        {
+            try
+            {
+                AM.PlayMusic($"Audios/{BGMname}");
+            }
+            catch
+            {
+                Debug.Log($"读取BGM：{BGMname} 失败，请检查Resources/Audios/下是否有相应名字的音频");
+            }
+        }
         //AM.PlayMusic("Audios/Monkeys Spinning Monkeys");
     }
 
