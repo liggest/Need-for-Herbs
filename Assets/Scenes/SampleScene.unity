@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 17023570}
   - component: {fileID: 17023572}
   - component: {fileID: 17023571}
+  - component: {fileID: 17023573}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -156,7 +157,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 35, y: 35}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &17023571
 MonoBehaviour:
@@ -198,6 +199,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17023569}
   m_CullTransparentMesh: 0
+--- !u!114 &17023573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17023569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 2
+  m_VerticalFit: 2
 --- !u!1 &23511381
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,6 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb12e465573efc44b799e5828cb67d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hintInfo: "\u6211\u662F\u8611\u83C7"
   key: 101
   onKeyDown:
     m_PersistentCalls:
@@ -1309,8 +1325,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 7049751
-  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!224 &357189630
 RectTransform:
@@ -1724,8 +1740,8 @@ MonoBehaviour:
   target: {fileID: 186755277}
   smoothTime: 0.4
   outRadius: 4.5
-  inRaduis: 0.03
-  deltaRaduis: 0.01
+  inRadius: 0.03
+  deltaRadius: 0.01
   sceneRect:
     serializedVersion: 2
     x: -20
@@ -3162,6 +3178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb12e465573efc44b799e5828cb67d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hintInfo: "\u6211\u65C1\u8FB9\u662F\u8611\u83C7"
   key: 51
   onKeyDown:
     m_PersistentCalls:
@@ -3805,6 +3822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb12e465573efc44b799e5828cb67d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hintInfo: "\u6211\u4E0D\u662F\u8611\u83C7\n\u662F\u4EBA\uFF01\uFF01\uFF01\n\u771F\u7684\uFF01\uFF01"
   key: 282
   onKeyDown:
     m_PersistentCalls:
@@ -4515,7 +4533,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topDistance: 2
-  keyText: {fileID: 17023571}
 --- !u!95 &1892488694
 Animator:
   serializedVersion: 3
