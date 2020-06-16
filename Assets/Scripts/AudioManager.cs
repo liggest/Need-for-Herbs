@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager AM;
+    public static AudioManager AM; //提供单例
+    [Tooltip("播放音乐用的AudioSource")]
     public AudioSource musicAS;
+    [Tooltip("播放音效用的AudioSource")]
     public AudioSource soundAS;
+    [Tooltip("如果非空，则场景加载后便尝试播放这个名字的BGM")]
     public string BGMname = "";
+    [Tooltip("音效集")]
     public AudioClip[] sounds;
     public ResourceRequest rr;
     // Start is called before the first frame update

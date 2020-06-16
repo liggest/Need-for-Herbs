@@ -208,9 +208,10 @@ public class PlayerCtrl : MonoBehaviour
     {
         if (collision.gameObject.tag == "Dangerous")
         {
-            Debug.Log("死了");
+            //Debug.Log("死了");
             isAbleToCtrl = false;
             isDead = true;
+            Death();
         }
     }
 
@@ -232,6 +233,8 @@ public class PlayerCtrl : MonoBehaviour
 
     void Death()
     {
+        Vector3 deathPoint = transform.position;
+
         //重置
         CanMove = true;
         CanJump = true;
@@ -240,7 +243,14 @@ public class PlayerCtrl : MonoBehaviour
         Anim.SetBool("isjump", false);
         Anim.SetBool("isrunning", false);
         Rig.velocity = Vector2.zero;
-
         //设置位置
+
+        Vector3 rebrithPoint = GameCtrl.gc.GetRebrithPoint(deathPoint);
+        GameCtrl.gc.Warp(transform, rebrithPoint);
+
+        isAbleToCtrl = true;
+        isDead = false;
+
+
     }
 }
