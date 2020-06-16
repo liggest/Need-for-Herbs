@@ -37,9 +37,9 @@ public class InventoryManager : MonoBehaviour
     public GameObject emptySlot2;
     public GameObject emptySlot3;
 
-    public List<GameObject> slots = new List<GameObject>();
-    public List<GameObject> slots2 = new List<GameObject>();
-    public List<GameObject> slots3 = new List<GameObject>();
+    public List<GameObject> slots;
+    public List<GameObject> slots2;
+    public List<GameObject> slots3;
 
 
     //public Item thisItem;
