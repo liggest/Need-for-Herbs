@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Warpzone : MonoBehaviour
+public class RandomManager : MonoBehaviour
 {
-    public Transform WarpPoint;
     // Start is called before the first frame update
     void Start()
     {
+        GameObject.FindGameObjectsWithTag("plane");
         
     }
 
@@ -15,10 +15,5 @@ public class Warpzone : MonoBehaviour
     void Update()
     {
         
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        GameCtrl.gc.Warp(collision.transform, WarpPoint.position, true);
     }
 }

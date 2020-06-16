@@ -89,11 +89,19 @@ public class GameCtrl : MonoBehaviour
 
     public void Warp(Transform target,Vector3 point)
     {
+        Warp(target,point,false);
+    }
+
+    public void Warp(Transform target,Vector3 point,bool cameraMove)
+    {
         target.position = point;
-        if (target.gameObject.layer == 8) // 如果是player
+        if (cameraMove)
         {
-            float cameraZ = Camera.main.transform.position.z;
-            Camera.main.transform.position = new Vector3(point.x, point.y, cameraZ);
+            if (target.gameObject.layer == 8) // 如果是player
+            {
+                float cameraZ = Camera.main.transform.position.z;
+                Camera.main.transform.position = new Vector3(point.x, point.y, cameraZ);
+            }
         }
     }
 
