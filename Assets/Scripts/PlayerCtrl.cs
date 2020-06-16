@@ -48,15 +48,43 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField] bool isAbleToCtrl = true;
     [SerializeField] bool isDead = false;
 
+    [Header("装备包")]
+    public Inventory myBag;
+
+    [Header("大跳")]
+    public bool prop1equip;
+    [Header("冲刺")]
+    public bool prop2equip;
+    [Header("不怕刺")]
+    public bool prop3equip;
+    [Header("探照灯")]
+    public bool prop4equip;
+    public GameObject mylight;
+    [Header("指南针")]
+    public bool prop5equip;
+    [Header("不怕食人花")]
+    public bool prop6equip;
+
+
     void Awake()
     {
         Rig = GetComponent<Rigidbody2D>();
         Anim = GetComponent<Animator>();
+        UpdateProp();
     }
 
     private void Update()
     {
         OpenMyBag();
+        if (prop5equip)
+        {
+            GiveDir();
+        }
+    }
+
+    private void GiveDir()
+    {
+
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -127,31 +155,45 @@ public class PlayerCtrl : MonoBehaviour
                 {
                     Rig.velocity += Vector2.up * Physics2D.gravity.y * (FallMultiplier - 1) * Time.fixedDeltaTime;//加速下坠
                 }
-                else if (Rig.velocity.y > 0 && Input.GetAxis("Jump") != 1)//玩家上升，并且没有按下跳跃键
+
+                if (prop1equip)
+                {
+                    if (Rig.velocity.y > 0 && Input.GetAxis("Jump") != 1)//玩家上升，并且没有按下跳跃键
+                    {
+                        Rig.velocity += Vector2.up * Physics2D.gravity.y * (LowJumpMultiplier - 1) * Time.fixedDeltaTime;//减缓上升
+                    }
+                }
+                else 
                 {
                     Rig.velocity += Vector2.up * Physics2D.gravity.y * (LowJumpMultiplier - 1) * Time.fixedDeltaTime;//减缓上升
                 }
+               
             }
             #endregion
 
             #region 冲刺
-            if (Input.GetAxisRaw("Dash") == 1 && !WasDashed)
+            if (prop2equip)
             {
-                WasDashed = true;
-                dir = GetDir();
-                StartCoroutine(Dash());//使用
-                                       //将玩家当前所有动量清零
-                Rig.velocity = Vector2.zero;
-                //施加一个力，让玩家飞出去
-                Rig.velocity += dir.normalized * DragForce;
+                if (Input.GetAxisRaw("Dash") == 1 && !WasDashed)
+                {
+                    WasDashed = true;
+                    dir = GetDir();
+                    StartCoroutine(Dash());//使用
+                                           //将玩家当前所有动量清零
+                    Rig.velocity = Vector2.zero;
+                    //施加一个力，让玩家飞出去
+                    Rig.velocity += dir.normalized * DragForce;
 
-            }
+                }
 
-            if (isOnGround && Input.GetAxisRaw("Dash") == 0)
-            {
-                WasDashed = false;
-            }
+                if (isOnGround && Input.GetAxisRaw("Dash") == 0)
+                {
+                    WasDashed = false;
+                }
+            }  
             #endregion
+
+
         }
     }
 
@@ -204,6 +246,7 @@ public class PlayerCtrl : MonoBehaviour
         Gizmos.DrawWireCube((Vector2)transform.position + PointOffset, Size);
     }
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Dangerous")
@@ -212,6 +255,16 @@ public class PlayerCtrl : MonoBehaviour
             isAbleToCtrl = false;
             isDead = true;
             Death();
+        }
+
+        if (collision.gameObject.tag=="thorn")
+        {
+            if (!prop3equip) 
+            {
+                isAbleToCtrl = false;
+                isDead = true;
+                Death();
+            }
         }
     }
 
@@ -228,6 +281,53 @@ public class PlayerCtrl : MonoBehaviour
             {
                 Bag.SetActive(false);
             }
+        }
+    }
+
+
+    public void UpdateProp()
+    {
+        prop1equip = false;
+        prop2equip = false;
+        prop3equip = false;
+        mylight.SetActive(false);
+        prop4equip = false;
+        prop5equip = false;
+        prop6equip = false;
+        for (int i = 0; i < myBag.itemList3.Count; i++)
+        {
+            if (myBag.itemList3[i] != null)
+            {
+                PropEffect(myBag.itemList3[i].Itemid);
+            }
+        }
+    }
+
+    void PropEffect(int id)
+    {
+        switch (id)
+        {
+            case 0:
+                prop1equip = true;
+                break;
+            case 1:
+                prop2equip = true;
+                break;
+            case 2:
+                prop3equip = true;
+                break;
+            case 3:
+                mylight.SetActive(true);
+                prop4equip = true;
+                break;
+            case 4:
+                prop5equip = true;
+                break;
+            case 5:
+                prop6equip = true;
+                break;
+            default:
+                break;
         }
     }
 

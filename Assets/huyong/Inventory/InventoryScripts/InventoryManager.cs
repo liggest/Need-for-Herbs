@@ -59,12 +59,16 @@ public class InventoryManager : MonoBehaviour
     private Item currentChooseItem;
     private EquipItem currentChooseEquip;
 
+
+    public PlayerCtrl player;
     //public bool useornot;
 
     //public GameObject choosePanel;
     //public Image leftBtn;
     //public Image centerBtn;
     //public Image rightBtn;
+
+
     public void Awake()
     {
         if (instance != null)
@@ -89,8 +93,8 @@ public class InventoryManager : MonoBehaviour
         RefreshItem2();
         RefreshItem3();
     }
-    
-   
+
+
     public static void UpdateItemInfo(string iteminfo)
     {
         instance.itemInformation.text = iteminfo;
@@ -238,6 +242,7 @@ public class InventoryManager : MonoBehaviour
     {
         EquipItem item = instance.currentChooseEquip;
         instance.myBag.itemList3[instance.myBag.itemList3.IndexOf(item)] = null;
+        player.UpdateProp();
         PanelClear();
         RefreshItem3();     
     }
@@ -264,6 +269,7 @@ public class InventoryManager : MonoBehaviour
                     {
                         instance.myBag.itemList[instance.myBag.itemList.IndexOf(item)] = null;
                     }
+                    player.UpdateProp();
                     PanelClear();
                     RefreshItem1();
                     RefreshItem3();
@@ -288,7 +294,8 @@ public class InventoryManager : MonoBehaviour
                 {
                     instance.myBag.itemList[i] = item;
                     instance.myBag.itemList3[instance.myBag.itemList3.IndexOf(equip)] = null;
-                    item.itemHeld = 1;          
+                    item.itemHeld = 1;
+                    player.UpdateProp();
                     RefreshItem1();
                     RefreshItem3();
                     PanelClear();
@@ -304,6 +311,7 @@ public class InventoryManager : MonoBehaviour
         {
             instance.myBag.itemList3[instance.myBag.itemList3.IndexOf(equip)] = null;
             item.itemHeld += 1;
+            player.UpdateProp();
             PanelClear();
             RefreshItem1();
             RefreshItem3();
