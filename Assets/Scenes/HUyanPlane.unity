@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1572,6 +1572,79 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 195
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &171546305
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 171546306}
+  - component: {fileID: 171546308}
+  - component: {fileID: 171546307}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &171546306
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171546305}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4367647836930337953}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &171546307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171546305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: a41cf62d263bbb842bd624492a6d193e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &171546308
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171546305}
+  m_CullTransparentMesh: 0
 --- !u!1 &190362524
 GameObject:
   m_ObjectHideFlags: 0
@@ -13613,6 +13686,7 @@ MonoBehaviour:
   startCountdown: 0
   timeText: {fileID: 3688464168103777428}
   hintText: {fileID: 2073442911}
+  endImg: {fileID: 171546307}
   Player: {fileID: 6359671741541007770}
   BagFullPanel: {fileID: 4367647836775852693}
   BagFullPanelTips: {fileID: 4367647836716625162}
@@ -15141,7 +15215,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 304096485}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -18466,7 +18540,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756373816}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20, y: -17, z: 0}
+  m_LocalPosition: {x: -24.5, y: -6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1289703709}
@@ -23509,7 +23583,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4367647836930337953}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -24812,6 +24886,7 @@ RectTransform:
   - {fileID: 4367647837098270775}
   - {fileID: 4367647838078723469}
   - {fileID: 4367647836775852690}
+  - {fileID: 171546306}
   - {fileID: 3688464168103777429}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -24899,14 +24974,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a8f3826d8d5cb294488b23a1c0b974a9, type: 2}
   - {fileID: 11400000, guid: b3c815aec3c792346835c83cf879603f, type: 2}
   - {fileID: 11400000, guid: 6f57dbf688763df44b6047dde9ceaa60, type: 2}
-  - {fileID: 11400000, guid: 2c475152552f597408fed150c285b328, type: 2}
+  - {fileID: 0}
   EquipItemList:
   - {fileID: 11400000, guid: 6f81c353fe300744cb9bcd955259009c, type: 2}
   - {fileID: 11400000, guid: 17504c26ab00db74bb5dab786a221999, type: 2}
-  - {fileID: 11400000, guid: a3d09183b46f92345afaeb8004765154, type: 2}
-  - {fileID: 11400000, guid: 23a8c367fcabbdc42a78a0c858176a65, type: 2}
-  - {fileID: 11400000, guid: f152739998969b94ea90144fda894203, type: 2}
-  - {fileID: 11400000, guid: 6702da0e508fb0c44b22e8ff7d75438e, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   currentItem: {fileID: 0}
   TipsPanel: {fileID: 4367647836775852693}
   Tips: {fileID: 4367647836716625162}
