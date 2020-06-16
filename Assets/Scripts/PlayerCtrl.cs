@@ -218,7 +218,6 @@ public class PlayerCtrl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
-            InventoryManager.PanelClear();
             if (Bag.activeSelf == false)
             {
                 Bag.SetActive(true);
@@ -228,19 +227,5 @@ public class PlayerCtrl : MonoBehaviour
                 Bag.SetActive(false);
             }
         }
-    }
-
-    void Death()
-    {
-        //重置
-        CanMove = true;
-        CanJump = true;
-        GravityModifier = true;
-        Rig.gravityScale = 1;
-        Anim.SetBool("isjump", false);
-        Anim.SetBool("isrunning", false);
-        Rig.velocity = Vector2.zero;
-
-        //设置位置
     }
 }
