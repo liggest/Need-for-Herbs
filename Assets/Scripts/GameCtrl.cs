@@ -68,6 +68,10 @@ public class GameCtrl : MonoBehaviour
                 }
             }
         }
+        if (isLevelEnd)
+        {
+
+        }
         
     }
 
@@ -99,6 +103,7 @@ public class GameCtrl : MonoBehaviour
 
     public void LevelEnd()
     {
+        Player.SendMessage("LevelEnd", SendMessageOptions.DontRequireReceiver);
         Time.timeScale = 0;
         isLevelEnd = true;
     }

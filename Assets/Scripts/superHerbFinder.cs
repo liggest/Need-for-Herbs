@@ -6,6 +6,7 @@ public class superHerbFinder : MonoBehaviour
 {
     public bool isFind = false;
     List<GameObject> superHerbs = null;
+    int currentIdx = -1;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,5 +56,7 @@ public class superHerbFinder : MonoBehaviour
         }
         return nearest.transform;
     }
+
+
 
 }

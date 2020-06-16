@@ -176,4 +176,8 @@ public class RandomManager : MonoBehaviour
     {
         return superherbs;
     }
+    public void RemoveSuperHerbs(GameObject target)
+    {
+        superherbs.Remove(target);
+    }
 }
