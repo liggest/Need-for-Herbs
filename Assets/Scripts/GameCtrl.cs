@@ -15,8 +15,6 @@ public class GameCtrl : MonoBehaviour
     public Text timeText;
     [Tooltip("keyPresenter中的提示文字")]
     public Text hintText;
-    [Tooltip("游戏结束的图片")]
-    public Image endImg;
     [Tooltip("玩家")]
     public Transform Player;
     [Header("这里记录了Prefab需要的一些属性")]
@@ -27,7 +25,6 @@ public class GameCtrl : MonoBehaviour
     //public RebrithPoint[] rebriths;
     bool isCountDown = false;
     bool isLevelEnd = false;
-    bool isAnyKey = false;
     float gametime = -1;
     float second = 0;
     Vector3 initPoint;
@@ -51,7 +48,6 @@ public class GameCtrl : MonoBehaviour
         {
             StartCountDown();
         }
-
         
     }
 
@@ -74,10 +70,7 @@ public class GameCtrl : MonoBehaviour
         }
         if (isLevelEnd)
         {
-            if (isAnyKey && Input.anyKeyDown)
-            {
-                LoadScene("Tutorial");
-            }
+
         }
         
     }
@@ -111,33 +104,8 @@ public class GameCtrl : MonoBehaviour
     public void LevelEnd()
     {
         Player.SendMessage("LevelEnd", SendMessageOptions.DontRequireReceiver);
-        //Time.timeScale = 0;
+        Time.timeScale = 0;
         isLevelEnd = true;
-
-        StartCoroutine(LevelEndCortine());
-    }
-
-    IEnumerator LevelEndCortine()
-    {
-        endImg.gameObject.SetActive(true);
-        float er = endImg.color.r;
-        float eg = endImg.color.g;
-        float eb = endImg.color.b;
-        endImg.color = new Color(er, eg, eb, 0);
-        float ea = endImg.color.a;
-        while (ea < 1)
-        {
-            Debug.Log(ea);
-            endImg.color = new Color(er, eg, eb, ea + 0.7f * Time.deltaTime);
-            ea = endImg.color.a;
-            if (ea > 1)
-            {
-                endImg.color = new Color(er, eg, eb, 1);
-            }
-            yield return null;
-        }
-        isAnyKey = true;
-
     }
 
     public void Warp(Transform target,Vector3 point)

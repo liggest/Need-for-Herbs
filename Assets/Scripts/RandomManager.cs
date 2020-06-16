@@ -38,12 +38,8 @@ public class RandomManager : MonoBehaviour
         GameObject[] planes = GameObject.FindGameObjectsWithTag("Plane");
         plane2box = new BoxCollider2D[planes.Length];
 
-        if (PlayerInitPoints.Length > 0)
-        {
-            Transform initPoint = PlayerInitPoints[GetRandomIdx(PlayerInitPoints.Length)];
-            GameCtrl.gc.Warp(Player, initPoint.position, true);
-        }
-        
+        Transform initPoint = PlayerInitPoints[GetRandomIdx(PlayerInitPoints.Length)];
+        GameCtrl.gc.Warp(Player, initPoint.position, true);
         Player.gameObject.SetActive(false);
 
         for(int i = 0; i < superHerbsCount; i++)
