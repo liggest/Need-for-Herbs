@@ -40,6 +40,7 @@ public class PlayerCtrl : MonoBehaviour
     Animator Anim;
     public GameObject Bag;
 
+    [SerializeField] bool isMoving;
     [SerializeField] bool isOnGround;
     [SerializeField] float velocityX;
     [SerializeField] bool isJumping;
@@ -109,7 +110,7 @@ public class PlayerCtrl : MonoBehaviour
                         Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, 
                             WalkSpeed * Time.fixedDeltaTime * 60, 
                             ref velocityX, AccelerateTime), Rig.velocity.y);
-                    AudioManager.AM.PlaySound(footsound, true);
+                    isMoving = true;
                     transform.eulerAngles = new Vector3(0, 0, 0);
                     Anim.SetBool("isrunning", true);
                 }
@@ -120,13 +121,14 @@ public class PlayerCtrl : MonoBehaviour
                         Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, 
                             WalkSpeed * Time.fixedDeltaTime * 60 * -1,
                             ref velocityX, AccelerateTime), Rig.velocity.y);
-                    AudioManager.AM.PlaySound(footsound,true);
+                    isMoving = true;
                     transform.eulerAngles = new Vector3(0, 180, 0);
                     Anim.SetBool("isrunning", true);
                 }
 
                 else
                 {
+                    isMoving = false;
                     Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, 
                         0, ref velocityX,
                         DecelerateTime), Rig.velocity.y);
@@ -140,6 +142,7 @@ public class PlayerCtrl : MonoBehaviour
             {
                 if (Input.GetAxisRaw("Jump") == 1 && !isJumping)
                 {
+                    AudioManager.AM.PlaySound(jumpsound);
                     Rig.velocity = new Vector2(Rig.velocity.x, JumpingSpeed);
                     isJumping = true;
                     Anim.SetTrigger("takeof");
@@ -203,20 +206,16 @@ public class PlayerCtrl : MonoBehaviour
                 {
                     WasDashed = false;
                 }
-            }  
+            }
             #endregion
 
-
+            if (isMoving && !isJumping)
+            {
+                AudioManager.AM.PlaySound(footsound, true);
+            }
         }
     }
 
-    IEnumerator runsound()
-    {
-        while()
-        AudioManager.AM.PlaySound(footsound);
-        yield return new WaitForSeconds(DashWaitTime);
-        
-    }
 
     IEnumerator Dash()
     {

@@ -44,6 +44,7 @@ public class itemOnWorld : MonoBehaviour
     public void pick()
     {
         AddNewItem();
+        AudioManager.AM.PlaySound(4);
         if (thisItem.Itemid == 10)
         {
             RandomManager.rm.RemoveSuperHerbs(gameObject);

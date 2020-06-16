@@ -42,6 +42,7 @@ public class stoneOnWorld : MonoBehaviour
     public void pick()
     {
         AddNewItem();
+        AudioManager.AM.PlaySound(4);
         Destroy(gameObject);
     }
 
