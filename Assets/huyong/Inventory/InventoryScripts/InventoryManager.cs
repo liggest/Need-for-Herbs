@@ -417,5 +417,4 @@ public class InventoryManager : MonoBehaviour
             instance.slots3[i].GetComponent<Slot3>().SetupSlot(instance.myBag.itemList3[i]);
         }
     }
-
 }
