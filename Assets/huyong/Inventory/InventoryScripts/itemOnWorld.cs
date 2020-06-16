@@ -44,6 +44,10 @@ public class itemOnWorld : MonoBehaviour
     public void pick()
     {
         AddNewItem();
+        if (thisItem.Itemid == 10)
+        {
+            RandomManager.rm.RemoveSuperHerbs(gameObject);
+        }
         Destroy(gameObject);
     }
 

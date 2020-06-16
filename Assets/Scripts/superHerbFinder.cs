@@ -24,7 +24,16 @@ public class superHerbFinder : MonoBehaviour
         if (isFind)
         {
             Transform nsh = GetNearestSuperHerb();
-            transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, nsh.position - transform.position));
+            if (nsh)
+            {
+                transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, nsh.position - transform.position));
+            }
+            else
+            {
+                gameObject.SetActive(false);
+                isFind = false;
+            }
+            
         }
     }
 
@@ -44,6 +53,10 @@ public class superHerbFinder : MonoBehaviour
         if (superHerbs == null)
         {
             superHerbs = RandomManager.rm.GetSuperHerbs();
+        }
+        if (superHerbs.Count == 0)
+        {
+            return null;
         }
         foreach(GameObject sh in superHerbs)
         {

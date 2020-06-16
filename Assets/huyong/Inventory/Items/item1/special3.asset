@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: "\u7279\u6B8A\u836F\u67503"
   itemImage: {fileID: 21300000, guid: 8d2fc86548d26bf4abc50f70e1dff00c, type: 3}
   itemHeld: 0
-  Itemid: 0
+  Itemid: 10
   itemInfo: "\u7279\u6B8A\u836F\u67503"
   equip: 0
