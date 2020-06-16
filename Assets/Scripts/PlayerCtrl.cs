@@ -275,6 +275,7 @@ public class PlayerCtrl : MonoBehaviour
             InventoryManager.PanelClear();
             if (Bag.activeSelf == false)
             {
+                InventoryManager.updateBag();
                 Bag.SetActive(true);
             }
             else

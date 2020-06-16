@@ -15,9 +15,9 @@ MonoBehaviour:
   itemName: prop2
   itemImage: {fileID: 21300000, guid: 7788578edcc370145ae5156b7d9370f9, type: 3}
   Itemid: 5
-  material1: {fileID: 11400000, guid: f5a5477ae093d8c49ad9ea2c38836add, type: 2}
-  material2: {fileID: 11400000, guid: 9d89183e4de187c4e8ddd0c3b49a8496, type: 2}
-  material1num: 2
-  material2num: 3
-  itemInfo: "\u8611\u83C72"
+  material1: {fileID: 11400000, guid: e3e6cb360741593449f4935aa4f4838b, type: 2}
+  material2: {fileID: 11400000, guid: 0d31aeb7abdf3a34bbee36eb1e722759, type: 2}
+  material1num: 3
+  material2num: 2
+  itemInfo: "\u9053\u51776"
   equip: 0

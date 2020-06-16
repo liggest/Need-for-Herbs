@@ -86,6 +86,11 @@ public class itemOnWorld : MonoBehaviour
     void Start()
     {
         isLoad = false;
+        player = GameCtrl.gc.Player.gameObject;
+        BagFullPanel = GameCtrl.gc.BagFullPanel;
+        BagFullPanelTips = GameCtrl.gc.BagFullPanelTips;
+        slider = GameCtrl.gc.slider;
+
     }
 
     public void load()
@@ -142,6 +147,7 @@ public class itemOnWorld : MonoBehaviour
         {
             thisItem.itemHeld += 1;
         }
+        InventoryManager.RefreshItem1();
     }
 
 }

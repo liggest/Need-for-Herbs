@@ -76,14 +76,20 @@ public class InventoryManager : MonoBehaviour
             Destroy(this);
         }
         instance = this;
+       
     }
 
-    private void OnEnable()
+    private void Start()
+    {
+        updateBag();
+    }
+
+    public static void updateBag()
     {
         instance.itemInformation.text = "";
         instance.currentItem = null;
-        instance.material1img.sprite = originmaterial1img;
-        instance.material2img.sprite = originmaterial2img;
+        instance.material1img.sprite = instance.originmaterial1img;
+        instance.material2img.sprite = instance.originmaterial2img;
         instance.material1num.text = "";
         instance.material2num.text = "";
         instance.panel1.SetActive(false);
