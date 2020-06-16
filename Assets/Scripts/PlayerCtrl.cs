@@ -101,7 +101,9 @@ public class PlayerCtrl : MonoBehaviour
                 if (Input.GetAxisRaw("Horizontal") > InputOffset.x)
                 {
                     if (Rig.velocity.x < WalkSpeed * Time.fixedDeltaTime * 60)
-                        Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, WalkSpeed * Time.fixedDeltaTime * 60, ref velocityX, AccelerateTime), Rig.velocity.y);
+                        Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, 
+                            WalkSpeed * Time.fixedDeltaTime * 60, 
+                            ref velocityX, AccelerateTime), Rig.velocity.y);
 
                     transform.eulerAngles = new Vector3(0, 0, 0);
                     Anim.SetBool("isrunning", true);
@@ -110,14 +112,18 @@ public class PlayerCtrl : MonoBehaviour
                 else if (Input.GetAxisRaw("Horizontal") < InputOffset.x * -1)
                 {
                     if (Rig.velocity.x > WalkSpeed * Time.fixedDeltaTime * 60 * -1)
-                        Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, WalkSpeed * Time.fixedDeltaTime * 60 * -1, ref velocityX, AccelerateTime), Rig.velocity.y);
+                        Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, 
+                            WalkSpeed * Time.fixedDeltaTime * 60 * -1,
+                            ref velocityX, AccelerateTime), Rig.velocity.y);
                     transform.eulerAngles = new Vector3(0, 180, 0);
                     Anim.SetBool("isrunning", true);
                 }
 
                 else
                 {
-                    Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, 0, ref velocityX, DecelerateTime), Rig.velocity.y);
+                    Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, 
+                        0, ref velocityX,
+                        DecelerateTime), Rig.velocity.y);
                     Anim.SetBool("isrunning", false);
                 }
             }

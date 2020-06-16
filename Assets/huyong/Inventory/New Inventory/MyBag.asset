@@ -48,6 +48,6 @@ MonoBehaviour:
   itemList3:
   - {fileID: 11400000, guid: 17504c26ab00db74bb5dab786a221999, type: 2}
   - {fileID: 11400000, guid: 6f81c353fe300744cb9bcd955259009c, type: 2}
-  - {fileID: 11400000, guid: a3d09183b46f92345afaeb8004765154, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: 23a8c367fcabbdc42a78a0c858176a65, type: 2}
   - {fileID: 11400000, guid: f152739998969b94ea90144fda894203, type: 2}
