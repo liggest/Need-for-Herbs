@@ -63,8 +63,15 @@ public class itemOnWorld : MonoBehaviour
                 }
                 else
                 {
-                    BagFullPanel.SetActive(true);
-                    BagFullPanelTips.text = "背包已满";
+                    if (playerInventory.itemList.Contains(thisItem))
+                    {
+                        load();
+                    }
+                    else
+                    {
+                        BagFullPanel.SetActive(true);
+                        BagFullPanelTips.text = "背包已满";
+                    }     
                 }
             }
         }
