@@ -1,54 +1,122 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class itemOnWorld : MonoBehaviour
 {
     public GameObject player;
     public Item thisItem;
     public Inventory playerInventory;
-    public Inventory Bag;
     public GameObject BagFullPanel;
+    public Text BagFullPanelTips;
+    public Animator animator;
+    public bool iscanpick;
+
+    [Header("加载条")]
+    public int t;
+    public float DownDistance;
+    float progressvalue;
+    public Slider slider;
+    bool isLoad;
     // Start is called before the first frame update
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-        
-    //    if (collision.gameObject.CompareTag("Player"))
-    //    {
-    //        if (Input.GetKeyDown(KeyCode.Y) && !isFull())
-    //        {
-    //            AddNewItem();
-    //            Destroy(gameObject);
-    //        }
-    //        else
-    //        {
-    //            BagFullPanel.SetActive(true);
-    //        }    
-    //    }
-    //}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag( "Player"))
+        {
+            animator.SetTrigger("istrigger");
+            iscanpick = true;
+        }
+       
+        //StartCoroutine(trigger());
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag( "Player"))
+        {
+            iscanpick = false;
+            stopload();
+        }      
+    }
+
+    public void pick()
+    {
+        AddNewItem();
+        Destroy(gameObject);
+    }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Y)&& Vector3.Distance(GetComponent<Transform>().position, player.transform.position) <= 1f)
+        if (!isLoad)
         {
-            if (!isFull())
+            if (Input.GetKeyDown(KeyCode.Y) && iscanpick)
             {
-                AddNewItem();
-                Destroy(gameObject);
+                if (!isFull())
+                {
+                    load();
+                }
+                else
+                {
+                    BagFullPanel.SetActive(true);
+                    BagFullPanelTips.text = "背包已满";
+                }
             }
-            else
+        }
+        ////
+        if (isLoad)
+        {
+            SetPos();
+            progressvalue += Time.deltaTime;
+            if (progressvalue > t)
             {
-                BagFullPanel.SetActive(true);
+                progressvalue = t;
             }
-        }      
+            slider.value = progressvalue / t;
+            if (slider.value == 1)
+            {
+                slider.gameObject.SetActive(false);
+                isLoad = false;
+                pick();
+            }
+        }
+    }
+
+    void Start()
+    {
+        isLoad = false;
+    }
+
+    public void load()
+    {
+        progressvalue = 0;
+        isLoad = true;
+        slider.gameObject.SetActive(true);
+    }
+
+
+    public void stopload()
+    {
+        if (isLoad)
+        {
+            isLoad = false;
+            progressvalue = 0;
+            slider.gameObject.SetActive(false);
+        }    
+    }
+
+
+    void SetPos()
+    {
+        slider.transform.position = transform.position + -1 * transform.up * DownDistance;
     }
 
     public  bool isFull()
     {
-        for (int i = 0; i < Bag.itemList.Count; i++)
+        for (int i = 0; i < playerInventory.itemList.Count; i++)
         {
-            if (Bag.itemList[i]==null)
+            if (playerInventory.itemList[i]==null)
             {
                 return false;
             }
@@ -74,7 +142,6 @@ public class itemOnWorld : MonoBehaviour
         {
             thisItem.itemHeld += 1;
         }
-        InventoryManager.RefreshItem1();
     }
 
 }

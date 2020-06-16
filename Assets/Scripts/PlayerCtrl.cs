@@ -218,7 +218,6 @@ public class PlayerCtrl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
-            print("sdd");
             if (Bag.activeSelf == false)
             {
                 Bag.SetActive(true);

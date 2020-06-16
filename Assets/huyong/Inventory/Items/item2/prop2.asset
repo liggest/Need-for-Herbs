@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: prop2
   m_EditorClassIdentifier: 
   itemName: prop2
-  itemImage: {fileID: 21300000, guid: 980c4d37b9ca6da439122b8f99dbceca, type: 3}
+  itemImage: {fileID: 21300000, guid: af50dc4fa7b6d314895d0f8c79adb4a5, type: 3}
   Itemid: 1
   material1: {fileID: 11400000, guid: f5a5477ae093d8c49ad9ea2c38836add, type: 2}
   material2: {fileID: 11400000, guid: 9d89183e4de187c4e8ddd0c3b49a8496, type: 2}
