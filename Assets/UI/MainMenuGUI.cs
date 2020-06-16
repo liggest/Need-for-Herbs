@@ -70,7 +70,6 @@ public class MainMenuGUI : MonoBehaviour {
         else
         {
             Application.Quit();
-            Debug.Log("Have Quit");
         }
     }
 	// Update is called once per frame

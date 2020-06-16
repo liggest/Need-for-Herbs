@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -825,7 +825,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: HUyanPlane
+          m_StringArgument: Main
           m_BoolArgument: 0
         m_CallState: 2
   kp: {fileID: 305211490}
@@ -14373,7 +14373,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a3d09183b46f92345afaeb8004765154, type: 2}
   - {fileID: 11400000, guid: 23a8c367fcabbdc42a78a0c858176a65, type: 2}
   - {fileID: 11400000, guid: f152739998969b94ea90144fda894203, type: 2}
-  - {fileID: 11400000, guid: 6702da0e508fb0c44b22e8ff7d75438e, type: 2}
+  - {fileID: 11400000, guid: f152739998969b94ea90144fda894203, type: 2}
   currentItem: {fileID: 0}
   TipsPanel: {fileID: 2598616001705218372}
   Tips: {fileID: 2598616001770772187}
@@ -14654,6 +14654,7 @@ GameObject:
   - component: {fileID: 4335543286417230179}
   - component: {fileID: 4335543286417230178}
   - component: {fileID: 4335543286417230176}
+  - component: {fileID: 4335543286417230182}
   m_Layer: 0
   m_Name: 'GameManager '
   m_TagString: Untagged
@@ -14661,6 +14662,30 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4335543286417230182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4335543286417230181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 977391d44fda8f249930d228ef849299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mybag: {fileID: 11400000, guid: c71e3123bef60ba41aee69a25c210c0f, type: 2}
+  Listitem:
+  - {fileID: 11400000, guid: c99368e881e51d343a57cbb6ec9d7f1c, type: 2}
+  - {fileID: 11400000, guid: 2fac6f84f2bcc7848afcb6c1779df06b, type: 2}
+  - {fileID: 11400000, guid: af91d2b46af24e549b2582422f328b90, type: 2}
+  - {fileID: 11400000, guid: e3e6cb360741593449f4935aa4f4838b, type: 2}
+  - {fileID: 11400000, guid: c7843dbe691b6a54fa9486a992c1ee74, type: 2}
+  - {fileID: 11400000, guid: 0d31aeb7abdf3a34bbee36eb1e722759, type: 2}
+  - {fileID: 11400000, guid: 4abef0fe44abcf7449cec9198b54527b, type: 2}
+  - {fileID: 11400000, guid: 0b328e08d7a61634f8b4b69d67776895, type: 2}
+  - {fileID: 11400000, guid: d14ba4d595f6baa45be0e253fb8762c8, type: 2}
+  - {fileID: 11400000, guid: b3c815aec3c792346835c83cf879603f, type: 2}
 --- !u!1 &5448604632166631360
 GameObject:
   m_ObjectHideFlags: 0
