@@ -11,11 +11,13 @@ public class GameCtrl : MonoBehaviour
     public float levelTime = 120;
     public Text timeText;
     public Text hintText;
+    public Transform Player;
     //public RebrithPoint[] rebriths;
     bool isCountDown = false;
     bool isLevelEnd = false;
     float gametime = -1;
     float second = 0;
+    Vector3 initPoint;
     LinkedList<Vector3> workingRebriths = new LinkedList<Vector3>();
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,10 @@ public class GameCtrl : MonoBehaviour
             Destroy(this);
         }
         gc = this;
+
+        initPoint = Player.position;
+        AddWorkPoint(initPoint);
+
         ResetTimer();
         StartCountDown();
     }
