@@ -48,6 +48,11 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField] bool isAbleToCtrl = true;
     [SerializeField] bool isDead = false;
 
+    [Header("音效")]
+    public int footsound;
+    public int jumpsound;
+    public int getherbsound;
+
     [Header("装备包")]
     public Inventory myBag;
 
@@ -104,7 +109,7 @@ public class PlayerCtrl : MonoBehaviour
                         Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, 
                             WalkSpeed * Time.fixedDeltaTime * 60, 
                             ref velocityX, AccelerateTime), Rig.velocity.y);
-
+                    AudioManager.AM.PlaySound(footsound, true);
                     transform.eulerAngles = new Vector3(0, 0, 0);
                     Anim.SetBool("isrunning", true);
                 }
@@ -115,6 +120,7 @@ public class PlayerCtrl : MonoBehaviour
                         Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, 
                             WalkSpeed * Time.fixedDeltaTime * 60 * -1,
                             ref velocityX, AccelerateTime), Rig.velocity.y);
+                    AudioManager.AM.PlaySound(footsound,true);
                     transform.eulerAngles = new Vector3(0, 180, 0);
                     Anim.SetBool("isrunning", true);
                 }
@@ -202,6 +208,14 @@ public class PlayerCtrl : MonoBehaviour
 
 
         }
+    }
+
+    IEnumerator runsound()
+    {
+        while()
+        AudioManager.AM.PlaySound(footsound);
+        yield return new WaitForSeconds(DashWaitTime);
+        
     }
 
     IEnumerator Dash()

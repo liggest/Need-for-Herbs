@@ -7,6 +7,7 @@ public class Initialize : MonoBehaviour
 {
     public Inventory mybag;
     public List<Item> Listitem;
+    public PlayerCtrl player;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +44,7 @@ public class Initialize : MonoBehaviour
             }
         }
         InventoryManager.updateBag();
+        player.UpdateProp();
     }
 
     // Update is called once per frame
