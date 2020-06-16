@@ -9,8 +9,13 @@ public class GameCtrl : MonoBehaviour
     public static GameCtrl gc;
     [Tooltip("以秒为单位的关卡时间")]
     public float levelTime = 120;
+    [Tooltip("是否在场景加载后便开始计时")]
+    public bool startCountdown = false;
+    [Tooltip("计时用的文字")]
     public Text timeText;
+    [Tooltip("keyPresenter中的提示文字")]
     public Text hintText;
+    [Tooltip("玩家")]
     public Transform Player;
     //public RebrithPoint[] rebriths;
     bool isCountDown = false;
@@ -20,19 +25,25 @@ public class GameCtrl : MonoBehaviour
     Vector3 initPoint;
     LinkedList<Vector3> workingRebriths = new LinkedList<Vector3>();
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (gc != null)
         {
             Destroy(this);
         }
         gc = this;
-
+    }
+    void Start()
+    {
         initPoint = Player.position;
         AddWorkPoint(initPoint);
 
         ResetTimer();
-        StartCountDown();
+        if (startCountdown)
+        {
+            StartCountDown();
+        }
+        
     }
 
     // Update is called once per frame

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 88888618963757567}
   - component: {fileID: 1026464084007679}
   - component: {fileID: 1451124713460783703}
+  - component: {fileID: 1801356790201569097}
   m_Layer: 9
   m_Name: plane3_10
   m_TagString: Plane
@@ -115,3 +116,29 @@ PolygonCollider2D:
       - {x: -1.7719183, y: -0.1782906}
       - {x: -1.1339273, y: -0.32137322}
       - {x: 0.95114136, y: -0.368057}
+--- !u!61 &1801356790201569097
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467083135645576466}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.0037778616}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.13, y: 0.84}
+    newSize: {x: 4.13, y: 0.84}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.9109485, y: 0.66621953}
+  m_EdgeRadius: 0
