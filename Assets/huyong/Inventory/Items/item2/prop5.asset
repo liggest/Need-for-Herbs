@@ -19,5 +19,5 @@ MonoBehaviour:
   material2: {fileID: 11400000, guid: 4abef0fe44abcf7449cec9198b54527b, type: 2}
   material1num: 2
   material2num: 3
-  itemInfo: "\u9053\u51775"
+  itemInfo: "\u8D85\u7EA7\u836F\u8349\u63A2\u6D4B\u5668"
   equip: 0

@@ -62,6 +62,7 @@ public class PlayerCtrl : MonoBehaviour
     public GameObject mylight;
     [Header("指南针")]
     public bool prop5equip;
+    public superHerbFinder finder;
     [Header("不怕食人花")]
     public bool prop6equip;
 
@@ -293,6 +294,8 @@ public class PlayerCtrl : MonoBehaviour
         prop3equip = false;
         mylight.SetActive(false);
         prop4equip = false;
+        finder.isFind = false;
+        finder.gameObject.SetActive(false);
         prop5equip = false;
         prop6equip = false;
         for (int i = 0; i < myBag.itemList3.Count; i++)
@@ -322,6 +325,8 @@ public class PlayerCtrl : MonoBehaviour
                 prop4equip = true;
                 break;
             case 4:
+                finder.isFind = true;
+                finder.gameObject.SetActive(true);
                 prop5equip = true;
                 break;
             case 5:

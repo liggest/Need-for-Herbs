@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: prop5
   m_EditorClassIdentifier: 
   itemName: "\u8611\u83C7"
-  itemImage: {fileID: 21300000, guid: af50dc4fa7b6d314895d0f8c79adb4a5, type: 3}
-  itemHeld: 2
+  itemImage: {fileID: 21300000, guid: ffd9d0f9a1f2b5d498ca995651c9d521, type: 3}
+  itemHeld: 0
   Itemid: 4
-  itemInfo: "\u8611\u83C7"
+  itemInfo: "\u8D85\u7EA7\u836F\u8349\u63A2\u6D4B\u5668"
   equip: 1
