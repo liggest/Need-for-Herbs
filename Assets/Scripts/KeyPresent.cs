@@ -65,6 +65,12 @@ public class KeyPresent : MonoBehaviour
         topdistance = value;
     }
 
+    public void SetText(string info)
+    {
+        keyText.text = info;
+        bgFit = 0;
+    }
+
     public void Show(Transform t,string info, KeyCode key, UnityEvent keydown)
     {
         if (gameObject.activeInHierarchy)
@@ -82,8 +88,7 @@ public class KeyPresent : MonoBehaviour
             keystr = keystr.Substring(5);
         }
         keyText.text = keystr;*/
-        keyText.text = info;
-        bgFit = 0;
+        SetText(info);
         isShow = true;
         SetPos();
         gameObject.SetActive(true);
@@ -93,6 +98,7 @@ public class KeyPresent : MonoBehaviour
         }
         ani.Play("keyPresenterPop");
     }
+
 
     void SetPos()
     {
