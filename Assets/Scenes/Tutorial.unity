@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4171,6 +4171,7 @@ MonoBehaviour:
   startCountdown: 1
   timeText: {fileID: 312732365}
   hintText: {fileID: 757395869}
+  endImg: {fileID: 3688464168223485021}
   Player: {fileID: 825426653}
   BagFullPanel: {fileID: 1129574540724262092}
   BagFullPanelTips: {fileID: 1129574540658709331}
@@ -4897,6 +4898,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 124016299936201293, guid: 8b2581779a266104a85c7022338e5b8b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 248613183520471891, guid: 8b2581779a266104a85c7022338e5b8b,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -5046,6 +5052,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688464168514766480, guid: 8b2581779a266104a85c7022338e5b8b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4367647836552904352, guid: 8b2581779a266104a85c7022338e5b8b,
         type: 3}
@@ -5162,8 +5173,25 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9025559493937487899, guid: 8b2581779a266104a85c7022338e5b8b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b2581779a266104a85c7022338e5b8b, type: 3}
+--- !u!114 &3688464168223485021 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9172910793906995854, guid: 8b2581779a266104a85c7022338e5b8b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3688464168223485020}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5206227647161025856
 PrefabInstance:
   m_ObjectHideFlags: 0
