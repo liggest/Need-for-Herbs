@@ -17,6 +17,11 @@ public class GameCtrl : MonoBehaviour
     public Text hintText;
     [Tooltip("玩家")]
     public Transform Player;
+    [Header("这里记录了Prefab需要的一些属性")]
+    public GameObject BagFullPanel;
+    public Text BagFullPanelTips;
+    public Slider slider;
+
     //public RebrithPoint[] rebriths;
     bool isCountDown = false;
     bool isLevelEnd = false;
