@@ -10,6 +10,8 @@ TagManager:
   - use
   - Plane
   - Plane1
+  - thornPlane
+  - thorn
   layers:
   - Default
   - TransparentFX

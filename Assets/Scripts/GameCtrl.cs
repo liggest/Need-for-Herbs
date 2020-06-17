@@ -17,6 +17,8 @@ public class GameCtrl : MonoBehaviour
     public Text hintText;
     [Tooltip("游戏结束的图片")]
     public Image endImg;
+    [Tooltip("游戏胜利的图片")]
+    public Image winImg;
     [Tooltip("玩家")]
     public Transform Player;
     [Header("这里记录了Prefab需要的一些属性")]
@@ -92,13 +94,13 @@ public class GameCtrl : MonoBehaviour
 
     public void finish()
     {
-        print("胜利");
+        LevelWin();
         StopCountDown();
     }
 
     private void OnGUI()
     {
-        if (isLevelEnd)
+        if (isLevelEnd && gametime <= 0)
         {
             timeText.text = "时间到";
             return;
@@ -129,6 +131,14 @@ public class GameCtrl : MonoBehaviour
         isLevelEnd = true;
         StartCoroutine(LevelEndCortine());
     }
+
+    public void LevelWin()
+    {
+        Player.SendMessage("LevelWin", SendMessageOptions.DontRequireReceiver);
+        //Time.timeScale = 0;
+        isLevelEnd = true;
+        StartCoroutine(LevelWinCortine());
+    }
     IEnumerator LevelEndCortine()
     {
         endImg.gameObject.SetActive(true);
@@ -150,6 +160,28 @@ public class GameCtrl : MonoBehaviour
         }
         isAnyKey = true;
 
+    }
+
+    IEnumerator LevelWinCortine()
+    {
+        winImg.gameObject.SetActive(true);
+        float er = winImg.color.r;
+        float eg = winImg.color.g;
+        float eb = winImg.color.b;
+        winImg.color = new Color(er, eg, eb, 0);
+        float ea = winImg.color.a;
+        while (ea < 1)
+        {
+            //Debug.Log(ea);
+            winImg.color = new Color(er, eg, eb, ea + 0.7f * Time.deltaTime);
+            ea = winImg.color.a;
+            if (ea > 1)
+            {
+                winImg.color = new Color(er, eg, eb, 1);
+            }
+            yield return null;
+        }
+        isAnyKey = true;
     }
 
     public void Warp(Transform target,Vector3 point)

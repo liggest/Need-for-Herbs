@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: MyBag
   m_EditorClassIdentifier: 
   itemList:
-  - {fileID: 11400000, guid: f5a5477ae093d8c49ad9ea2c38836add, type: 2}
-  - {fileID: 11400000, guid: 9d89183e4de187c4e8ddd0c3b49a8496, type: 2}
-  - {fileID: 11400000, guid: 61d1a636988b33c4fb7437f4fb31e286, type: 2}
-  - {fileID: 11400000, guid: bbf9926cc0835ee4daebf17a0e0dbbd4, type: 2}
-  - {fileID: 11400000, guid: c052dc613bbcf8f4b94289868710f148, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: a8f3826d8d5cb294488b23a1c0b974a9, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -46,8 +46,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9def35bc01efe7740b3a639d973628fe, type: 2}
   - {fileID: 11400000, guid: 3858360412eae274eb10483861e9eb55, type: 2}
   itemList3:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: a3d09183b46f92345afaeb8004765154, type: 2}
+  - {fileID: 11400000, guid: 6f81c353fe300744cb9bcd955259009c, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

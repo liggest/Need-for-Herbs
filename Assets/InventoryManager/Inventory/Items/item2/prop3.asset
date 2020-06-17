@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: prop3
   m_EditorClassIdentifier: 
   itemName: prop2
-  itemImage: {fileID: 21300000, guid: 04663c6d9230cbf4699a600dbb6a0f68, type: 3}
+  itemImage: {fileID: 21300000, guid: a247cace13b447a498956a0b031589cc, type: 3}
   Itemid: 2
   material1: {fileID: 11400000, guid: c7843dbe691b6a54fa9486a992c1ee74, type: 2}
   material2: {fileID: 11400000, guid: e3e6cb360741593449f4935aa4f4838b, type: 2}
   material1num: 2
   material2num: 2
-  itemInfo: "\u523A\u514D\u75AB"
+  itemInfo: "\u4EAB\u53D7\u514D\u75AB\u6BD2\u523A\u635F\u4F24\u7684BUFF"
   equip: 0

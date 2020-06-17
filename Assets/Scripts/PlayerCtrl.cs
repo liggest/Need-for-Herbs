@@ -278,6 +278,18 @@ public class PlayerCtrl : MonoBehaviour
         Gizmos.DrawWireCube((Vector2)transform.position + PointOffset, Size);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "thorn")
+        {
+            if (!prop3equip)
+            {
+                isAbleToCtrl = false;
+                isDead = true;
+                Death();
+            }
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -289,15 +301,7 @@ public class PlayerCtrl : MonoBehaviour
             Death();
         }
 
-        if (collision.gameObject.tag=="thorn")
-        {
-            if (!prop3equip) 
-            {
-                isAbleToCtrl = false;
-                isDead = true;
-                Death();
-            }
-        }
+       
     }
 
     void OpenMyBag()
