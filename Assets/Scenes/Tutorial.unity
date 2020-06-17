@@ -4001,7 +4001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1000754370
 Transform:
   m_ObjectHideFlags: 0
@@ -16492,6 +16492,7 @@ MonoBehaviour:
   timeText: {fileID: 3151725286255177541}
   hintText: {fileID: 757395869}
   endImg: {fileID: 1493056420}
+  winImg: {fileID: 0}
   Player: {fileID: 5448604633457826358}
   BagFullPanel: {fileID: 2598616001705218372}
   BagFullPanelTips: {fileID: 2598616001770772187}
