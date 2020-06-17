@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 286eaad23bc301c45a94c3b2059f3055, type: 3}
   m_Name: special2
   m_EditorClassIdentifier: 
-  itemName: "\u7279\u6B8A\u836F\u67502"
+  itemName: "\u6842\u679D"
   itemImage: {fileID: 21300000, guid: 95441bf9a7158124f8f75bcfdfea3e6b, type: 3}
   itemHeld: 0
   Itemid: 10
-  itemInfo: "\u7279\u6B8A\u836F\u67502"
+  itemInfo: "\u4F3C\u4E4E\u6563\u53D1\u7740\u72EC\u7279\u7684\u9999\u6C14"
   equip: 0
