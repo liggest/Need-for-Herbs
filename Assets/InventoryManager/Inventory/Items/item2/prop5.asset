@@ -16,8 +16,8 @@ MonoBehaviour:
   itemImage: {fileID: 21300000, guid: ffd9d0f9a1f2b5d498ca995651c9d521, type: 3}
   Itemid: 4
   material1: {fileID: 11400000, guid: 2fac6f84f2bcc7848afcb6c1779df06b, type: 2}
-  material2: {fileID: 11400000, guid: 4abef0fe44abcf7449cec9198b54527b, type: 2}
+  material2: {fileID: 11400000, guid: c7843dbe691b6a54fa9486a992c1ee74, type: 2}
   material1num: 2
-  material2num: 3
-  itemInfo: "\u8D85\u7EA7\u836F\u8349\u63A2\u6D4B\u5668"
+  material2num: 2
+  itemInfo: "\u9AD8\u7EA7\u836F\u8349\u63A2\u6D4B\u5668"
   equip: 0

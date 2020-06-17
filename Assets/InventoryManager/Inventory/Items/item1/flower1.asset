@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: flower1
   itemImage: {fileID: 21300000, guid: 12b3574ec364a80488a80226056027ab, type: 3}
-  itemHeld: 1
+  itemHeld: 6
   Itemid: 0
   itemInfo: "\u5C0F\u9EC4fa"
   equip: 0

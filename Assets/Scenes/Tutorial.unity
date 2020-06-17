@@ -7428,7 +7428,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: abc93b168c1ed0443a366ebdd7340582, type: 3}
   - {fileID: 8300000, guid: 157ff6b2db4a0904b94c941b5536d5c1, type: 3}
   - {fileID: 8300000, guid: 8f3226b19adb3784cbe0189dc516a1bb, type: 3}
-  - {fileID: 8300000, guid: ae1c1b3c9227d284d891febc54728ba4, type: 3}
+  - {fileID: 8300000, guid: 9d10ffa0c72b9194aafd811c95a0ce70, type: 3}
   - {fileID: 8300000, guid: e46f809478a6b95459cdc6827250d889, type: 3}
 --- !u!4 &2119446988
 Transform:
@@ -16227,13 +16227,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b3c815aec3c792346835c83cf879603f, type: 2}
   - {fileID: 11400000, guid: 6f57dbf688763df44b6047dde9ceaa60, type: 2}
   - {fileID: 11400000, guid: 2c475152552f597408fed150c285b328, type: 2}
+  - {fileID: 11400000, guid: c052dc613bbcf8f4b94289868710f148, type: 2}
+  - {fileID: 11400000, guid: 61d1a636988b33c4fb7437f4fb31e286, type: 2}
+  - {fileID: 11400000, guid: 816e9f874e722bb4d969ab157001569d, type: 2}
+  - {fileID: 11400000, guid: 475e76af3e33a114cb1c852a3d7c6a8e, type: 2}
+  - {fileID: 11400000, guid: bbf9926cc0835ee4daebf17a0e0dbbd4, type: 2}
+  - {fileID: 11400000, guid: 10c4e62321bc9f2409dd865557fc96e3, type: 2}
+  - {fileID: 11400000, guid: bc24ec62be6a2334f88f0ae2cd7ea87c, type: 2}
+  - {fileID: 11400000, guid: 9d48b6817103ac7499e23ffafb7cde0e, type: 2}
+  - {fileID: 11400000, guid: 4eb8ec41365d7dd41873652593deee4b, type: 2}
   EquipItemList:
   - {fileID: 11400000, guid: 6f81c353fe300744cb9bcd955259009c, type: 2}
   - {fileID: 11400000, guid: 17504c26ab00db74bb5dab786a221999, type: 2}
   - {fileID: 11400000, guid: a3d09183b46f92345afaeb8004765154, type: 2}
   - {fileID: 11400000, guid: 23a8c367fcabbdc42a78a0c858176a65, type: 2}
   - {fileID: 11400000, guid: f152739998969b94ea90144fda894203, type: 2}
-  - {fileID: 11400000, guid: f152739998969b94ea90144fda894203, type: 2}
+  - {fileID: 11400000, guid: 6702da0e508fb0c44b22e8ff7d75438e, type: 2}
   currentItem: {fileID: 0}
   TipsPanel: {fileID: 2598616001705218372}
   Tips: {fileID: 2598616001770772187}
@@ -16241,6 +16250,7 @@ MonoBehaviour:
   panel2: {fileID: 2598616002429246439}
   panel3: {fileID: 2598616001463541343}
   player: {fileID: 5448604633457826352}
+  taskpoint: 0
 --- !u!114 &2598616002597115766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16457,10 +16467,12 @@ MonoBehaviour:
   superHerbsCount: 3
   superHerbsPrefabs:
   - {fileID: 3723497365901424991, guid: 494bf2b4b5a63f84ba5eefa1b593b935, type: 3}
+  superHerbsTargetnum: 02000000
   groundLine: -4
   herbsPOnGround: 0.8
   materialsPOnGround: 0.3
   Player: {fileID: 5448604633457826358}
+  hint: {fileID: 0}
   PlayerInitPoints: []
   isFinished: 0
 --- !u!114 &4335543286417230178
@@ -16484,6 +16496,12 @@ MonoBehaviour:
   BagFullPanel: {fileID: 2598616001705218372}
   BagFullPanelTips: {fileID: 2598616001770772187}
   slider: {fileID: 8930455829266598512}
+  taskherb: []
+  taskherbstatus: 
+  taskherbnum: 
+  taskherbtargetnum: 
+  isfinished: 0
+  isCountDown: 0
 --- !u!4 &4335543286417230179
 Transform:
   m_ObjectHideFlags: 0
@@ -16543,9 +16561,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c7843dbe691b6a54fa9486a992c1ee74, type: 2}
   - {fileID: 11400000, guid: 0d31aeb7abdf3a34bbee36eb1e722759, type: 2}
   - {fileID: 11400000, guid: 4abef0fe44abcf7449cec9198b54527b, type: 2}
-  - {fileID: 11400000, guid: 0b328e08d7a61634f8b4b69d67776895, type: 2}
-  - {fileID: 11400000, guid: d14ba4d595f6baa45be0e253fb8762c8, type: 2}
   - {fileID: 11400000, guid: b3c815aec3c792346835c83cf879603f, type: 2}
+  - {fileID: 11400000, guid: d14ba4d595f6baa45be0e253fb8762c8, type: 2}
   player: {fileID: 5448604633457826352}
 --- !u!1 &5448604632166631360
 GameObject:

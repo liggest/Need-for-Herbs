@@ -42,7 +42,10 @@ public class Initialize : MonoBehaviour
             {
                 mybag.itemList3[i] = null;
             }
+
+            player.initialized();
         }
+        GameCtrl.gc.isfinished = false;
         InventoryManager.updateBag();
         player.UpdateProp();
     }

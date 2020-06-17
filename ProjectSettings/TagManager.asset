@@ -9,6 +9,7 @@ TagManager:
   - prop
   - use
   - Plane
+  - Plane1
   layers:
   - Default
   - TransparentFX

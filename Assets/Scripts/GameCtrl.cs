@@ -24,8 +24,15 @@ public class GameCtrl : MonoBehaviour
     public Text BagFullPanelTips;
     public Slider slider;
 
+
+    public List<Item> taskherb;
+    public List<bool> taskherbstatus;
+    public List<int> taskherbnum;
+    public List<int> taskherbtargetnum;
+    public bool isfinished;
+
     //public RebrithPoint[] rebriths;
-    bool isCountDown = false;
+    public bool isCountDown = false;
     bool isLevelEnd = false;
     bool isAnyKey = false;
     float gametime = -1;
@@ -44,6 +51,7 @@ public class GameCtrl : MonoBehaviour
     void Start()
     {
         initPoint = Player.position;
+        isfinished = false;
         AddWorkPoint(initPoint);
 
         ResetTimer();
@@ -56,6 +64,7 @@ public class GameCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (isCountDown)
         {
             second += Time.deltaTime;
@@ -79,6 +88,12 @@ public class GameCtrl : MonoBehaviour
 
         }
         
+    }
+
+    public void finish()
+    {
+        print("胜利");
+        StopCountDown();
     }
 
     private void OnGUI()
@@ -124,7 +139,7 @@ public class GameCtrl : MonoBehaviour
         float ea = endImg.color.a;
         while (ea < 1)
         {
-            Debug.Log(ea);
+            //Debug.Log(ea);
             endImg.color = new Color(er, eg, eb, ea + 0.7f * Time.deltaTime);
             ea = endImg.color.a;
             if (ea > 1)

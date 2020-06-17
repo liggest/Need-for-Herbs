@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
 
-    static InventoryManager instance;
+    public static InventoryManager instance;
     //public Sprite image;
     public Inventory myBag;
     public Inventory myBag2;
@@ -61,6 +61,7 @@ public class InventoryManager : MonoBehaviour
 
 
     public PlayerCtrl player;
+    public int taskpoint;
     //public bool useornot;
 
     //public GameObject choosePanel;
@@ -170,6 +171,9 @@ public class InventoryManager : MonoBehaviour
                     {
                         instance.PropItemList[currentItem.Itemid].itemHeld += 1;
                     }
+                    Changeherbstatus(currentItem.material1, currentItem.material1.itemHeld);
+                    Changeherbstatus(currentItem.material2, currentItem.material2.itemHeld);
+                    Changeherbstatus(instance.PropItemList[currentItem.Itemid], instance.PropItemList[currentItem.Itemid].itemHeld);
                     RefreshItem1();
                 }
                 else
@@ -234,12 +238,43 @@ public class InventoryManager : MonoBehaviour
         instance.currentChooseEquip = equip;
     }
 
+    public void Changeherbstatus(Item item,int num)
+    {
+        if (GameCtrl.gc.taskherb.Contains(item))
+        {
+            int index = GameCtrl.gc.taskherb.IndexOf(item);
+            GameCtrl.gc.taskherbnum[index] = num;
+            if (GameCtrl.gc.taskherbnum[index]>= 
+                GameCtrl.gc.taskherbtargetnum[index])
+            {
+                GameCtrl.gc.taskherbstatus[index] = true;
+                GameCtrl.gc.isfinished = isFinished();
+            }
+            else
+            {
+                GameCtrl.gc.taskherbstatus[index] = false;
+            }
+        }
+    }
+
+    bool isFinished()
+    {
+        foreach (var status in GameCtrl.gc.taskherbstatus)
+        {
+            if (!status)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 
     public void Discard1()
     {
         Item item = instance.currentChooseItem;
         item.itemHeld = 0;
         instance.myBag.itemList[instance.myBag.itemList.IndexOf(item)] = null;
+        Changeherbstatus(item, 0);
         PanelClear();
         RefreshItem1();
     }
@@ -346,6 +381,14 @@ public class InventoryManager : MonoBehaviour
         int material1num = currentItem.material1num;
         Item material2 = currentItem.material2;
         int material2num = currentItem.material2num;
+        if (!instance.myBag.itemList.Contains(material1))
+        {
+            return false;
+        }
+        if (!instance.myBag.itemList.Contains(material2))
+        { 
+            return false;
+        }
         if (material1.itemHeld < material1num)
         {
             return false;
@@ -387,7 +430,8 @@ public class InventoryManager : MonoBehaviour
         {
             instance.slots.Add(Instantiate(instance.emptySlot));
             instance.slots[i].transform.SetParent(instance.slotGrid1.transform);
-            instance.slots[i].GetComponent<Slot>().SetupSlot(instance.myBag.itemList[i]); 
+            instance.slots[i].GetComponent<Slot>().SetupSlot(instance.myBag.itemList[i]);
+            instance.slots[i].GetComponent<Slot>().slotID = i;
         } 
     }
 

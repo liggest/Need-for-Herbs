@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: "\u534A\u590F"
   itemImage: {fileID: 21300000, guid: 58b7ca1a8a856bd4e96b4eb59fec16f7, type: 3}
-  itemHeld: 0
-  Itemid: 10
+  itemHeld: 2
+  Itemid: 6
   itemInfo: "\u867D\u7136\u53EA\u662F\u65F1\u5730\u4E2D\u7684\u6742\u8349\n\u5374\u80FD\u71E5\u6E7F\u5316\u75F0\uFF0C\u964D\u9006\u6B62\u5455"
   equip: 0

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuGUI : MonoBehaviour {
  
     public AudioClip beep;
+    public AudioClip mainmusic;
     public GUISkin menuSkin;
     public Rect menuArea;
     public Rect playButton;
@@ -16,8 +17,8 @@ public class MainMenuGUI : MonoBehaviour {
     string menuPage = "main";
 	// Use this for initialization
 	void Start () {
- 
-       menuAreaNormalized =
+        GetComponent<AudioSource>().PlayOneShot(mainmusic);
+        menuAreaNormalized =
             new Rect(menuArea.x * Screen.width - (menuArea.width * 0.5f), menuArea.y * Screen.height - (menuArea.height * 0.5f), menuArea.width, menuArea.height);
 	}
     void OnGUI()
@@ -60,7 +61,7 @@ public class MainMenuGUI : MonoBehaviour {
     }
     IEnumerator ButtonAction(string levelName)
     {
-        GetComponent<AudioSource>().PlayOneShot(beep);
+        //GetComponent<AudioSource>().PlayOneShot(beep);
         yield return new WaitForSeconds(0.35f);
         
         if(levelName!="quit")

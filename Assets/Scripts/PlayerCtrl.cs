@@ -80,6 +80,18 @@ public class PlayerCtrl : MonoBehaviour
         UpdateProp();
     }
 
+    public void initialized()
+    {
+        CanMove = false;
+        CanJump = false;
+    }
+
+    public void begin()
+    {
+        CanMove = true;
+        CanJump = true;
+        GameCtrl.gc.StartCountDown();
+    }
     private void Update()
     {
         OpenMyBag();

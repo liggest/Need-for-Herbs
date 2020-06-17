@@ -45,8 +45,9 @@ public class itemOnWorld : MonoBehaviour
     {
         AddNewItem();
         AudioManager.AM.PlaySound(4);
-        if (thisItem.Itemid == 10)
+        if (thisItem.Itemid >= 6)
         {
+            InventoryManager.instance.Changeherbstatus(thisItem, thisItem.itemHeld);
             RandomManager.rm.RemoveSuperHerbs(gameObject);
         }
         Destroy(gameObject);

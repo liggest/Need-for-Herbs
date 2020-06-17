@@ -432,6 +432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beep: {fileID: 0}
+  mainmusic: {fileID: 8300000, guid: f406cd0bf36383f4ca21c65b08afd807, type: 3}
   menuSkin: {fileID: 11400000, guid: e8ddff5295012844c83ebb0303ecf6ff, type: 2}
   menuArea:
     serializedVersion: 2
@@ -477,7 +478,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

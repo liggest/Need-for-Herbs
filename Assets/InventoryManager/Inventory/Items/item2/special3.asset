@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: "\u7279\u6B8A\u836F\u67503"
   itemImage: {fileID: 21300000, guid: 8d2fc86548d26bf4abc50f70e1dff00c, type: 3}
-  Itemid: 7
+  Itemid: 8
   material1: {fileID: 11400000, guid: 68fbf13cb8d3f18479fa4da88c7cb128, type: 2}
   material2: {fileID: 11400000, guid: 7bf3dd141cb83be429c349bd824cc46e, type: 2}
   material1num: 3
   material2num: 2
-  itemInfo: "\u7279\u6B8A\u836F\u67503"
+  itemInfo: "\u6839\u830E\u53EF\u4EE5\u836F\u7528\n\u53EF\u4EE5\u62FF\u53BB\u8865\u8865\u8EAB\u5B50"
   equip: 0

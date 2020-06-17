@@ -12,12 +12,14 @@ public class RandomManager : MonoBehaviour
     public GameObject[] materialsPrefabs;
     public int superHerbsCount = 3;
     public GameObject[] superHerbsPrefabs;
+    public int[] superHerbsTargetnum;
     
     public float groundLine = -4.0f;
     public float herbsPOnGround = 0.8f;
     public float materialsPOnGround = 0.3f;
 
     public Transform Player;
+    public Transform hint;
     public Transform[] PlayerInitPoints;
 
     public bool isFinished = false;
@@ -42,12 +44,21 @@ public class RandomManager : MonoBehaviour
         {
             Transform initPoint = PlayerInitPoints[GetRandomIdx(PlayerInitPoints.Length)];
             GameCtrl.gc.Warp(Player, initPoint.position, true);
+            GameCtrl.gc.Warp(hint, initPoint.position, false);
         }
         Player.gameObject.SetActive(false);
 
-        for(int i = 0; i < superHerbsCount; i++)
+        //for(int i = 0; i < superHerbsCount; i++)
+        //{
+        //    GenerateSuperHerb(planes);
+        //}
+
+        for (int i = 0; i < superHerbsPrefabs.Length; i++)
         {
-            GenerateSuperHerb(planes);
+            for (int k = 0; k < superHerbsTargetnum[i]; k++)
+            {
+                initSuperHerb(planes, superHerbsPrefabs[i]);
+            }
         }
         for(int i = 0; i < herbsCount; i++)
         {
@@ -59,7 +70,7 @@ public class RandomManager : MonoBehaviour
         }
 
         Player.gameObject.SetActive(true);
-        GameCtrl.gc.StartCountDown();
+        //GameCtrl.gc.StartCountDown();
         isFinished = true;
     }
 
@@ -81,6 +92,7 @@ public class RandomManager : MonoBehaviour
     {
         return superHerbsPrefabs[ GetRandomIdx(superHerbsPrefabs.Length) ];
     }
+
     int GetRandomIdx(int len)
     {
         return Random.Range(0, len);
@@ -96,11 +108,11 @@ public class RandomManager : MonoBehaviour
     }
 
     Vector3 GetPosFromCollider(BoxCollider2D bc,Transform pt)
-    {
+    {        
         Vector2 result = pt.position;
         float bcx = bc.size.x;
         float bcy = bc.size.y;
-        return result+bc.offset+ new Vector2(bcx * Random.value - bcx / 2.0f, bcy / 2.0f);
+        return result+ bc.offset+new Vector2(bcx*(Random.value -0.5f)*pt.localScale.x*0.9f, bcy / 2.0f*pt.localScale.y);
     }
     void GenerateMaterial(GameObject[] planes)
     {
@@ -166,6 +178,17 @@ public class RandomManager : MonoBehaviour
     void GenerateSuperHerb(GameObject[] planes)
     {
         GameObject h = GetSuperHerb();
+        Vector3 pos = new Vector3();
+        int pidx = GetRandomIdx(planes.Length);
+        Transform pt = planes[pidx].transform;
+        BoxCollider2D bc = GetBoxCollider(pidx, planes);
+        pos = GetPosFromCollider(bc, pt);
+        GameObject sh = Instantiate<GameObject>(h, pos, Quaternion.Euler(0, 0, 0));
+        superherbs.Add(sh);
+    }
+
+    void initSuperHerb(GameObject[] planes,GameObject h)
+    {
         Vector3 pos = new Vector3();
         int pidx = GetRandomIdx(planes.Length);
         Transform pt = planes[pidx].transform;

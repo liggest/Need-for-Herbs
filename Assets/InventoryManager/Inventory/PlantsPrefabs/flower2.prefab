@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  thisItem: {fileID: 11400000, guid: f5a5477ae093d8c49ad9ea2c38836add, type: 2}
+  thisItem: {fileID: 11400000, guid: 9d89183e4de187c4e8ddd0c3b49a8496, type: 2}
   playerInventory: {fileID: 11400000, guid: c71e3123bef60ba41aee69a25c210c0f, type: 2}
   BagFullPanel: {fileID: 0}
   BagFullPanelTips: {fileID: 0}

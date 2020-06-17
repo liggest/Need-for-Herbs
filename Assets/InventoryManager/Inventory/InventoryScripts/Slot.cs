@@ -19,7 +19,6 @@ public class Slot : MonoBehaviour
         //lastItem = slotItem;
         slotID = itemInSlot.GetComponentInParent<Slot>().slotID;
         //InventoryManager.getID(slotID,true);
-        Debug.Log(slotID);
     }
 
 
