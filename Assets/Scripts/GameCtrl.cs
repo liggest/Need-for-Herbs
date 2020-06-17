@@ -52,9 +52,10 @@ public class GameCtrl : MonoBehaviour
     }
     void Start()
     {
-        initPoint = Player.position;
         isfinished = false;
-        AddWorkPoint(initPoint);
+
+        //initPoint = Player.position;
+        //AddWorkPoint(initPoint);
 
         ResetTimer();
         if (startCountdown)

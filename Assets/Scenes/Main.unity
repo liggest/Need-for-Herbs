@@ -10132,12 +10132,12 @@ PrefabInstance:
     - target: {fileID: 474296081394236799, guid: 054fb3d6755b0c54d89918132b73144f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.34
+      value: 23.83
       objectReference: {fileID: 0}
     - target: {fileID: 474296081394236799, guid: 054fb3d6755b0c54d89918132b73144f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.4
+      value: -0.82
       objectReference: {fileID: 0}
     - target: {fileID: 474296081394236799, guid: 054fb3d6755b0c54d89918132b73144f,
         type: 3}
@@ -26229,13 +26229,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 995ffe1a28ce6354795654ef3d1242e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintInfo: "\u83B7\u5F97\u9700\u6C42\u836F\u6750\n\u5E76\u8FD4\u56DE"
-  hintInfosuccess: "\u606D\u559C\u4F60\u6210\u529F\u53D6\u5F97\u836F\u6750\n\u6309
-    Y \u5728\u63A7\u5236\u53F0\u8F93\u51FA\u80DC\u5229"
+  hintInfo: "\u83B7\u5F97<b>\u9700\u6C42\u836F\u8349</b>\u5E76\u8FD4\u56DE\uFF01\n\u53EF\u4EE5\u7528<b>Y\u952E</b>\n\u968F\u65F6\u5728\u6B64\u67E5\u770B<b>\u9700\u6C42</b>~"
+  hintInfoSuccess: "\u606D\u559C\u4F60\uFF01\n\u6210\u529F\u83B7\u5F97\u4E86\u6240\u6709\u836F\u8349\n\u6309<b>Y\u952E</b>\u79BB\u5F00\u5173\u5361\u5427~"
   key: 121
   onKeyDown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2080169960}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  keySuccess: 121
+  onKeyDownSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1289703708}
+        m_MethodName: finish
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   kp: {fileID: 1543493647}
 --- !u!1 &2053132508
 GameObject:

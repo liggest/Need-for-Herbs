@@ -44,9 +44,14 @@ public class RandomManager : MonoBehaviour
         {
             Transform initPoint = PlayerInitPoints[GetRandomIdx(PlayerInitPoints.Length)];
             GameCtrl.gc.Warp(Player, initPoint.position, true);
-            GameCtrl.gc.Warp(hint, initPoint.position, false);
+            if (hint)
+            {
+                GameCtrl.gc.Warp(hint, initPoint.position, false);
+            }
+            
         }
         Player.gameObject.SetActive(false);
+        GameCtrl.gc.AddWorkPoint(Player.position);
 
         //for(int i = 0; i < superHerbsCount; i++)
         //{
