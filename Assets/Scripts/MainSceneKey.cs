@@ -9,11 +9,15 @@ public class MainSceneKey : MonoBehaviour
     public string hintInfo;
 
     [Tooltip("药材收集完成提示文本"), TextArea]
-    public string hintInfosuccess;
+    public string hintInfoSuccess;
     [Tooltip("这个可交互物体的按键")]
     public KeyCode key;
     [Tooltip("按下按键时触发的函数")]
     public UnityEvent onKeyDown;
+    [Tooltip("药材收集完成后，可交互物体的按键")]
+    public KeyCode keySuccess;
+    [Tooltip("药材收集完成后，按下按键时触发的函数")]
+    public UnityEvent onKeyDownSuccess;
     [Tooltip("按键框的脚本")]
     public KeyPresent kp;
 
@@ -28,13 +32,14 @@ public class MainSceneKey : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (istrigger)
         {
             if (GameCtrl.gc.isfinished && Input.GetKeyDown(KeyCode.Y))
             {
                 GameCtrl.gc.finish();
             }
-        }
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,7 +49,7 @@ public class MainSceneKey : MonoBehaviour
             istrigger = true;
             if (GameCtrl.gc.isfinished)
             {
-                kp.Show(transform, hintInfosuccess, key, onKeyDown);
+                kp.Show(transform, hintInfoSuccess, keySuccess, onKeyDownSuccess);
             }
             else
             {

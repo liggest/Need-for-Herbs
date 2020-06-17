@@ -88,9 +88,12 @@ public class PlayerCtrl : MonoBehaviour
 
     public void begin()
     {
-        CanMove = true;
-        CanJump = true;
-        GameCtrl.gc.StartCountDown();
+        if (!GameCtrl.gc.isCountDown)
+        {
+            CanMove = true;
+            CanJump = true;
+            GameCtrl.gc.StartCountDown();
+        }
     }
     private void Update()
     {
