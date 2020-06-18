@@ -17289,7 +17289,7 @@ PrefabInstance:
     - target: {fileID: 3554283269308064411, guid: cd8b484bb34c21d4f8e78c1ef3bb5b0a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.14
+      value: -1.95
       objectReference: {fileID: 0}
     - target: {fileID: 3554283269308064411, guid: cd8b484bb34c21d4f8e78c1ef3bb5b0a,
         type: 3}
@@ -17799,7 +17799,7 @@ GameObject:
   - component: {fileID: 5856235510795136647}
   m_Layer: 8
   m_Name: left_leg
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17812,7 +17812,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5856235510795136641}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.08000024, y: -2.0250819, z: 0}
+  m_LocalPosition: {x: 0.06700023, y: -2.0250819, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5856235510098948639}
@@ -17854,9 +17854,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -478136987
+  m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 1
   m_Sprite: {fileID: 6773842640136104239, guid: 1b0fd48af77b1944593e73f86a2c264b,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -18004,9 +18004,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -478136987
+  m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 3
   m_Sprite: {fileID: -4086137826902552895, guid: 1b0fd48af77b1944593e73f86a2c264b,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -18031,7 +18031,7 @@ GameObject:
   - component: {fileID: 5856235510972450072}
   m_Layer: 8
   m_Name: body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18171,9 +18171,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -478136987
+  m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 1
   m_Sprite: {fileID: 8451971427814365250, guid: 1b0fd48af77b1944593e73f86a2c264b,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -18198,7 +18198,7 @@ GameObject:
   - component: {fileID: 5856235511064564448}
   m_Layer: 8
   m_Name: right_leg
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18211,7 +18211,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5856235511064564450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.062, y: -2.018082, z: 0}
+  m_LocalPosition: {x: -0.075, y: -2.018082, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5856235510098948639}
