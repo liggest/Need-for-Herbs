@@ -39593,7 +39593,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00042919815, y: -1.9678583}
+  m_Offset: {x: -0.00042919815, y: -2.102282}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5016252, y: 0.041915018}
@@ -39604,7 +39604,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.39801988, y: 0.57006645}
+  m_Size: {x: 0.39801988, y: 0.30121922}
   m_EdgeRadius: 0
 --- !u!212 &6359671741541007775
 SpriteRenderer:
@@ -40003,7 +40003,7 @@ GameObject:
   - component: {fileID: 6359671742987084133}
   m_Layer: 8
   m_Name: right_leg
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40086,7 +40086,7 @@ GameObject:
   - component: {fileID: 6359671743079462557}
   m_Layer: 8
   m_Name: body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40252,7 +40252,7 @@ GameObject:
   - component: {fileID: 6359671743294299394}
   m_Layer: 8
   m_Name: left_leg
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
