@@ -77,21 +77,21 @@ public class PlayerCtrl : MonoBehaviour
     {
         Rig = GetComponent<Rigidbody2D>();
         Anim = GetComponent<Animator>();
+        Rig.velocity = Vector2.zero;
         UpdateProp();
     }
 
     public void initialized()
     {
-        CanMove = false;
-        CanJump = false;
+        isAbleToCtrl = false;
+      
     }
 
     public void begin()
     {
         if (!GameCtrl.gc.isCountDown)
         {
-            CanMove = true;
-            CanJump = true;
+            isAbleToCtrl = true;
             GameCtrl.gc.StartCountDown();
         }
     }
@@ -144,9 +144,13 @@ public class PlayerCtrl : MonoBehaviour
                 else
                 {
                     isMoving = false;
-                    Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x, 
+                    Rig.velocity = new Vector2(Mathf.SmoothDamp(Rig.velocity.x,
                         0, ref velocityX,
                         DecelerateTime), Rig.velocity.y);
+                    if (Rig.velocity.x<=0.01f)
+                    {
+                        Rig.velocity = new Vector2(0, Rig.velocity.y);
+                    }                   
                     Anim.SetBool("isrunning", false);
                 }
             }
