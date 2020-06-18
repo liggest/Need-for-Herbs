@@ -20,7 +20,7 @@ public class MainMenuGUI : MonoBehaviour {
         GetComponent<AudioSource>().PlayOneShot(mainmusic);
         menuAreaNormalized =
             new Rect(menuArea.x * Screen.width - (menuArea.width * 0.5f), menuArea.y * Screen.height - (menuArea.height * 0.5f), menuArea.width, menuArea.height);
-	}
+    }
     void OnGUI()
     {
         GUI.skin = menuSkin;
@@ -38,22 +38,22 @@ public class MainMenuGUI : MonoBehaviour {
             }
             if (GUI.Button(new Rect(instructionsButton), "Instructions"))
             {
-                GetComponent<AudioSource>().PlayOneShot(beep);
+                //GetComponent<AudioSource>().PlayOneShot(beep);
                 menuPage = "instructions";
  
             }
             //if (GUI.Button(new Rect(quitButton), "Quit"))
             //{
-                StartCoroutine("ButtonAction", "quit");
+            //    StartCoroutine("ButtonAction", "quit");
             //}
-        }
+    }
         else if(menuPage=="instructions")
         {
             GUI.Label(new Rect(instructions), "十字键:移动\nB:背包\nY:采集\n左Ctrl:冲刺");
             //GUI.Label(new Rect(200, 40, 100, 30), "aaaaa" );
             if(GUI.Button(new Rect(quitttButton),"Back"))
             {
-                GetComponent<AudioSource>().PlayOneShot(beep);
+                //GetComponent<AudioSource>().PlayOneShot(beep);
                 menuPage = "main";
             }
         }
@@ -66,7 +66,8 @@ public class MainMenuGUI : MonoBehaviour {
         
         if(levelName!="quit")
         {
-            Application.LoadLevel(levelName);
+            SceneManager.LoadScene(levelName);
+            //Application.LoadLevel(levelName);
         }
         else
         {
