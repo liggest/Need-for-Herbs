@@ -32,14 +32,18 @@ public class MainSceneKey : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (istrigger)
-        {
-            if (GameCtrl.gc.isfinished && Input.GetKeyDown(KeyCode.Y))
-            {
-                GameCtrl.gc.finish();
-            }
-        }*/
+
+        //if (istrigger)
+        //{
+        //    if (GameCtrl.gc.isfinished && Input.GetKeyDown(KeyCode.T))
+        //    {
+        //        GameCtrl.gc.finish();
+        //    }
+        //    else if(Input.GetKeyDown(KeyCode.T))
+        //    {
+
+        //    }
+        //}
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
