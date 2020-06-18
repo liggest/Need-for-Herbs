@@ -388,7 +388,7 @@ public class PlayerCtrl : MonoBehaviour
         CanJump = true;
         GravityModifier = true;
         Rig.gravityScale = 1;
-        Anim.SetBool("isjump", false);
+        //Anim.SetBool("isjump", false);
         Anim.SetBool("isrunning", false);
         Rig.velocity = Vector2.zero;
         //设置位置
