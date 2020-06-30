@@ -84,6 +84,8 @@ public class PlayerCtrl : MonoBehaviour
     public void initialized()
     {
         isAbleToCtrl = false;
+        CanMove = false;
+        CanJump = false;
       
     }
 
@@ -92,21 +94,14 @@ public class PlayerCtrl : MonoBehaviour
         if (!GameCtrl.gc.isCountDown)
         {
             isAbleToCtrl = true;
+            CanMove = true;
+            CanJump = true;
             GameCtrl.gc.StartCountDown();
         }
     }
     private void Update()
     {
         OpenMyBag();
-        if (prop5equip)
-        {
-            GiveDir();
-        }
-    }
-
-    private void GiveDir()
-    {
-
     }
     // Update is called once per frame
     void FixedUpdate()

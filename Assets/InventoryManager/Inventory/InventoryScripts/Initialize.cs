@@ -40,20 +40,10 @@ public class Initialize : MonoBehaviour
         //    }
         //}
 
-        //if (scenename=="Main")
-        //{
-        //    for (int i = 0; i < mybag.itemList.Count; i++)
-        //    {
-        //        mybag.itemList[i] = null;
-        //    }
-
-        //    for (int i = 0; i < mybag.itemList3.Count; i++)
-        //    {
-        //        mybag.itemList3[i] = null;
-        //    }
-
-        //    player.initialized();
-        //}
+        if (scenename == "Main")
+        {
+            player.initialized();
+        }
         GameCtrl.gc.isfinished = false;
         InventoryManager.updateBag();
         player.UpdateProp();

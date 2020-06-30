@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 286eaad23bc301c45a94c3b2059f3055, type: 3}
-  m_Name: prop2
+  m_Name: trophy
   m_EditorClassIdentifier: 
-  itemName: "\u8611\u83C7"
-  itemImage: {fileID: 21300000, guid: 9086e654a0905174db74b8369277c6e7, type: 3}
-  itemHeld: 0
-  Itemid: 1
-  itemInfo: "\u4F7F\u7528\u5DE6Ctrl\u952E\u53EF\u4EE5\u8FDB\u884C\u77ED\u6682\u51B2\u523A"
-  equip: 1
+  itemName: "\u5956\u676F"
+  itemImage: {fileID: 21300000, guid: cb599f2c8567e3543af2e38e3444f016, type: 3}
+  itemHeld: 1
+  Itemid: 0
+  itemInfo: "\u606D\u559C\u4F60\u89E3\u9501\u6210\u5C31\u5956\u676F"
+  equip: 0

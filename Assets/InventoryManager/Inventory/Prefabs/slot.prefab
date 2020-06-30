@@ -293,13 +293,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4849823878935430448}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da684b602359bea4580b906d86809bbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   originalParent: {fileID: 0}
   myBag: {fileID: 11400000, guid: c71e3123bef60ba41aee69a25c210c0f, type: 2}
+  slotImage: {fileID: 0}
+  slotNum: {fileID: 0}
 --- !u!114 &4042515655938028704
 MonoBehaviour:
   m_ObjectHideFlags: 0
