@@ -16,6 +16,10 @@ public class InventoryManager : MonoBehaviour
     public GameObject slotGrid2;
     public GameObject slotGrid3;
 
+    GridLayoutGroup slotGL1;
+    GridLayoutGroup slotGL2;
+    GridLayoutGroup slotGL3;
+
     //public Text EnterBtn;
 
     //public Text itemName2;
@@ -82,7 +86,21 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
+        slotGL1 = slotGrid1.GetComponent<GridLayoutGroup>();
+        slotGL2 = slotGrid2.GetComponent<GridLayoutGroup>();
+        slotGL3 = slotGrid3.GetComponent<GridLayoutGroup>();
+        adaptGridSize(slotGL1);
+        adaptGridSize(slotGL2);
+        adaptGridSize(slotGL3);
         updateBag();
+    }
+
+    void adaptGridSize(GridLayoutGroup GL)
+    {
+        //Debug.Log("www");
+        Vector2 originSize = GL.cellSize;
+        GL.cellSize *= new Vector2(Screen.width, Screen.height) / new Vector2(800, 450); //800,450 经验值
+        GL.spacing = originSize - GL.cellSize + GL.spacing; //经验公式
     }
 
     public static void updateBag()
@@ -99,6 +117,24 @@ public class InventoryManager : MonoBehaviour
         RefreshItem1();
         RefreshItem2();
         RefreshItem3();
+
+        /*
+        Debug.Log(Screen.width);
+        Debug.Log(Screen.height);
+        if (instance.slotGL1)
+        {
+            Vector2 originSize = instance.slotGL1.cellSize;
+            instance.slotGL1.cellSize *= new Vector2(Screen.width, Screen.height) / new Vector2(800, 450);
+            instance.slotGL1.spacing = new Vector2(originSize.x - instance.slotGL1.cellSize.x, 0) + instance.slotGL1.spacing;
+            originSize = instance.slotGL2.cellSize;
+            instance.slotGL2.cellSize *= new Vector2(Screen.width, Screen.height) / new Vector2(800, 450);
+            instance.slotGL2.spacing = new Vector2(originSize.x - instance.slotGL2.cellSize.x, 0) + instance.slotGL2.spacing;
+            originSize = instance.slotGL3.cellSize;
+            instance.slotGL3.cellSize *= new Vector2(Screen.width, Screen.height) / new Vector2(800, 450);
+            instance.slotGL3.spacing = new Vector2(originSize.x - instance.slotGL3.cellSize.x, 0) + instance.slotGL3.spacing;
+        }
+        */
+
     }
 
 
