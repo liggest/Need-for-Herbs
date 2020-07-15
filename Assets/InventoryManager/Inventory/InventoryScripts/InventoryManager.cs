@@ -20,6 +20,7 @@ public class InventoryManager : MonoBehaviour
     GridLayoutGroup slotGL2;
     GridLayoutGroup slotGL3;
 
+    Canvas currentCanvas;
     //public Text EnterBtn;
 
     //public Text itemName2;
@@ -86,6 +87,7 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
+        currentCanvas = GetComponent<Canvas>();
         slotGL1 = slotGrid1.GetComponent<GridLayoutGroup>();
         slotGL2 = slotGrid2.GetComponent<GridLayoutGroup>();
         slotGL3 = slotGrid3.GetComponent<GridLayoutGroup>();
@@ -240,9 +242,13 @@ public class InventoryManager : MonoBehaviour
     }
     public static void MouseRightClick1(Item slotItem)
     {
+        //Debug.Log(Input.mousePosition);
         float X = Input.mousePosition.x - Screen.width / 2f;
         float Y = Input.mousePosition.y - Screen.height / 2f;
-        Vector2 tranPos = new Vector2(X, Y);
+        Vector2 tranPos = new Vector2(X, Y) / instance.currentCanvas.scaleFactor;
+        //Vector2 tranPos = Input.mousePosition / instance.currentCanvas.scaleFactor;
+        //tranPos.y = -tranPos.y;
+        //Debug.Log(instance.currentCanvas.scaleFactor);
         if (slotItem.equip == false)
         {
             instance.panel2.SetActive(true);
@@ -266,7 +272,7 @@ public class InventoryManager : MonoBehaviour
     {
         float X = Input.mousePosition.x - Screen.width / 2f;
         float Y = Input.mousePosition.y - Screen.height / 2f;
-        Vector2 tranPos = new Vector2(X, Y);
+        Vector2 tranPos = new Vector2(X, Y) / instance.currentCanvas.scaleFactor;
         instance.panel2.SetActive(false);
         instance.panel1.SetActive(false);
         instance.panel3.SetActive(true);
