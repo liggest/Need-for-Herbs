@@ -52,6 +52,6 @@ TagManager:
   - name: UI
     uniqueID: 7049751
     locked: 0
-  - name: New Layer
+  - name: Player
     uniqueID: 64244107
     locked: 0
