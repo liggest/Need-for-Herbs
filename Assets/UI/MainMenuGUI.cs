@@ -10,7 +10,7 @@ public class MainMenuGUI : MonoBehaviour {
     public Rect menuArea;
     public Rect playButton;
     public Rect instructionsButton;
-    //public Rect quitButton;
+    public Rect quitButton;
     public Rect instructions;
     public Rect quitttButton;
     Rect menuAreaNormalized;
@@ -27,31 +27,31 @@ public class MainMenuGUI : MonoBehaviour {
         GUI.BeginGroup(menuAreaNormalized);
         if (menuPage == "main")
         {
-            if (GUI.Button(new Rect(playButton), "play"))
+            if (GUI.Button(new Rect(playButton), "开始游戏"))
             {
-                StartCoroutine("ButtonAction", "second");
-                SceneManager.LoadScene("Tutorial");
+                StartCoroutine("ButtonAction", "Tutorial");
+                //SceneManager.LoadScene("Tutorial");
                 //Application.LoadLevel("Tutorial");
                 // ——网上说这个方法过时，应该用索引的，不再适用,但这个还是跑通了哈哈哈
                 //按下按钮“play”，跳转进场景“start222”
                 //最后还是改用SceneManager.LoadScene
             }
-            if (GUI.Button(new Rect(instructionsButton), "Instructions"))
+            if (GUI.Button(new Rect(instructionsButton), "操作说明"))
             {
                 //GetComponent<AudioSource>().PlayOneShot(beep);
                 menuPage = "instructions";
  
             }
-            //if (GUI.Button(new Rect(quitButton), "Quit"))
-            //{
-            //    StartCoroutine("ButtonAction", "quit");
-            //}
-    }
+            if (GUI.Button(new Rect(quitButton), "退出"))
+            {
+                StartCoroutine("ButtonAction", "quit");
+            }
+        }
         else if(menuPage=="instructions")
         {
-            GUI.Label(new Rect(instructions), "十字键:移动\nB:背包\nY:采集\n左Ctrl:冲刺");
+            GUI.Label(new Rect(instructions), "十字键:移动\nB:背包\nY:采集\nG:冲刺");
             //GUI.Label(new Rect(200, 40, 100, 30), "aaaaa" );
-            if(GUI.Button(new Rect(quitttButton),"Back"))
+            if(GUI.Button(new Rect(quitttButton),"返回"))
             {
                 //GetComponent<AudioSource>().PlayOneShot(beep);
                 menuPage = "main";
@@ -71,7 +71,11 @@ public class MainMenuGUI : MonoBehaviour {
         }
         else
         {
-            Application.Quit();
+            #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+            #else
+                Application.Quit();
+            #endif
         }
     }
 	// Update is called once per frame
