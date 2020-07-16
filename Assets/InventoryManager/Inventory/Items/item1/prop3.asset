@@ -16,5 +16,5 @@ MonoBehaviour:
   itemImage: {fileID: 21300000, guid: a247cace13b447a498956a0b031589cc, type: 3}
   itemHeld: 10
   Itemid: 2
-  itemInfo: "\u4EAB\u53D7\u514D\u75AB\u6BD2\u523A\u635F\u4F24\u7684BUFF"
+  itemInfo: "\u4EAB\u53D7\u514D\u75AB\u6BD2\u523A\u635F\u4F24\u7684BUFF\uFF08\u91D1\u523A\u9664\u5916\uFF09"
   equip: 1
